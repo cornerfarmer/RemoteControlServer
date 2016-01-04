@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="5a142094-2f52-4229-b3ba-19bd65b6141b"
+  name="Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="3b9d7ded-12a3-4dc7-becd-ffedca8d1519"
+        name="User"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="190efa19-e21c-42d8-b8f7-efbd8f1d93c5"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="toggle Debugging"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d9fff5d6-9e94-42ae-9a65-0df651b770d2"
+              LastKnownName="toggle debugging"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1465634a-f488-4511-868f-c8cabc2cda5f"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6e99fcc5-0f3e-4a04-af23-96fcbdaa54ea"
+                  name="toggle Debugging"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="83b8d5da-f022-49b5-9d92-bdd4f6587238"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="show connected clients"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9ddca7c3-ff58-4e65-87d0-d315d6220021"
+              LastKnownName="show connected clients"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9e17877d-0250-49a6-b514-d6aabb3c1949"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2d70607-90c9-4b0c-8aeb-2ad5384fbfa3"
+                  name="show connected clients"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f303bffc-13b4-4968-a33d-f86080bf5592"
+        name="connect client"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="98f4f6c7-9c0b-4ec7-847e-ddcd9c023d1f"
+        name="Artifact1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="58521357-4b3d-4b8f-8043-ca2c01a370da"
+        name="Client"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8416b9fc-b859-4665-ac3d-4a30541fe892"
+            isDerived="false"
+            sourceEndRoleName="Client"
+            targetEndRoleName="Client verbinden"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f303bffc-13b4-4968-a33d-f86080bf5592"
+              LastKnownName="connect client"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3de32c0c-b6ba-4c79-a0ea-92ae7c9fa6a3"
+                  name="Client"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="11e2d707-4f22-4f96-a9db-774e8f933d96"
+                  name="Client verbinden"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="dc78a095-53d3-4172-bf86-92a005d149f7"
+            isDerived="false"
+            sourceEndRoleName="Client"
+            targetEndRoleName="PDVD Command ausführen"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="260afaaa-96f5-42bd-aca4-bf5f9cc97cd0"
+                  name="Client"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d8bea450-e135-4469-8709-f3f4863639c9"
+                  name="PDVD Command ausführen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d81ca306-ddc4-46e5-841e-458440e0521c"
+            isDerived="false"
+            sourceEndRoleName="Client"
+            targetEndRoleName="Windows Command ausführen"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="85b3570f-bb0e-4646-9a1b-5adf17fe0d40"
+              LastKnownName="execute Windows command "
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a9271669-fed8-4edc-bdda-e142e3f62f20"
+                  name="Client"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1cd3d489-e1c0-4b78-b3de-5b72c73b0667"
+                  name="Windows Command ausführen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+        name="execute PDVD command ausführen"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="b252b8e5-a41f-458e-9d35-02dc029abc19"
+            isDerived="false"
+            sourceEndRoleName="PDVD Command ausführen"
+            targetEndRoleName="PDVD"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="c5f66aab-6d47-481d-9a7f-44f83c73dc37"
+              LastKnownName="PDVD"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="081d75db-64be-4b68-a400-2960a9ba4d64"
+                  name="PDVD Command ausführen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d0e72274-18d8-4aa1-8f2f-f3dd944d8635"
+                  name="PDVD"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="c5f66aab-6d47-481d-9a7f-44f83c73dc37"
+        name="PDVD"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="85b3570f-bb0e-4646-9a1b-5adf17fe0d40"
+        name="execute Windows command "
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5fc3b940-d1c6-4097-809b-611741ac71fa"
+            isDerived="false"
+            sourceEndRoleName="Windows Command ausführen"
+            targetEndRoleName="Windows"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="20ffce8f-a0c7-4de4-838d-ed08921cc66e"
+              LastKnownName="Windows"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca5cabd7-9976-4c4f-b083-df7314b051e2"
+                  name="Windows Command ausführen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a90b06bd-897f-4e11-821d-0ffafb991e15"
+                  name="Windows"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="20ffce8f-a0c7-4de4-838d-ed08921cc66e"
+        name="Windows"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d9fff5d6-9e94-42ae-9a65-0df651b770d2"
+        name="toggle debugging"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9ddca7c3-ff58-4e65-87d0-d315d6220021"
+        name="show connected clients"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="77ce13fc-984b-4668-b581-b415544c7e00"
+        name="next"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="be9d8a74-5167-4f04-9597-f40bfbb64098">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="23010a95-03a5-422e-94b2-a29ffec7ea47"
+        name="play/pause"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="aa217a51-c2c8-41bd-b117-f71ff50feb2e">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0fc97f07-380a-4053-bf33-d493f76de30f"
+        name="prev"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="db39ea23-c122-4352-b30b-d16cb23d2f51">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="339eed80-9419-4e6c-8ddd-eefdd9b8a2af"
+        name="change volume"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="03c7a3b7-14e5-4799-af95-9c22e6acccfd">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e28f2f10-fe4a-422d-b707-7f55050ea0f7"
+        name="arrow up/down/right/left"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="21e8f20d-c3a1-4c5c-b922-77df4868daf7">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9f16510b-af13-4456-8692-91dd01adcb0b"
+        name="OK"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="9fa1ff13-21e4-4570-9fbe-68f6fb2fcbee">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c0ea4f63-65d1-437b-b8dc-91b8b1ac22a5"
+        name="menu"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="cdc84980-8f61-4751-bd82-388382d1709c">
+            <useCaseMoniker
+              Id="9d5c3cb7-e1e7-459a-9e3c-4e09a0cdcdfc"
+              LastKnownName="execute PDVD command ausführen"
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="dcaa803f-6109-4358-99d7-a18a85a511c8"
+        name="move cursor"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="96ff2b23-2f6b-450b-b496-95ce225943fc">
+            <useCaseMoniker
+              Id="85b3570f-bb0e-4646-9a1b-5adf17fe0d40"
+              LastKnownName="execute Windows command "
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2d83ff3f-ab01-4adc-ba69-543b8addfbb4"
+        name="left click"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="ca4bbc0d-d623-4180-80bf-438af33d0cf7">
+            <useCaseMoniker
+              Id="85b3570f-bb0e-4646-9a1b-5adf17fe0d40"
+              LastKnownName="execute Windows command "
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3c1f8c66-4818-45f7-afad-75802a104a49"
+        name="right click"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="d5853bc6-2a25-4d73-884a-a09da2068e50">
+            <useCaseMoniker
+              Id="85b3570f-bb0e-4646-9a1b-5adf17fe0d40"
+              LastKnownName="execute Windows command "
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5e14b9fd-8f85-4d59-a6ab-52529332cd8b"
+        name="press key"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="55413245-55ac-43eb-890b-58b0e2a7395f">
+            <useCaseMoniker
+              Id="85b3570f-bb0e-4646-9a1b-5adf17fe0d40"
+              LastKnownName="execute Windows command "
+              LastKnownLocation="Modeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

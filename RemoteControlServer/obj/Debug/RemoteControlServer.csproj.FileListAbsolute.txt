@@ -1,0 +1,1 @@
+c:\users\dominik\documents\visual studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\RemoteControlServer.exe.config
