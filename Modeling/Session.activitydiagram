@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="9134a10b-8826-4370-82be-849723dc2701" name="Session" linkedPackageId="2bdeb413-b8f1-4a71-bcfa-9325334fe171" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="102352fa-3efd-4756-9594-fdace99e1f42">
+      <profileInstance Id="a6ec91a8-cdca-4ff4-be85-f18d93af7015" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="4dffcef7-6ddc-49dd-9b1f-f4f9d326e98f">
+      <profileInstance Id="26b5c346-3c19-4d0b-b520-f9917746f63c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="2535ba3a-5074-49c8-9e34-e27a04026b0b" name="Session" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="d819410c-48c2-4782-b19b-7133b4c11fc3" />
+        <nodes>
+          <initialNode Id="53ddda9a-2274-4ec7-8e62-9fc9d5df5b7d" name="Initial1" isLeaf="false">
+            <elementDefinition Id="dd88ead4-cecb-44cc-a35a-5f18adeb27ef" />
+            <flowNodeTargets>
+              <controlFlow Id="885f499a-be3a-4be9-a0f1-af181f9a3c2a" isLeaf="false">
+                <opaqueActionMoniker Id="45c1ae3c-767c-43b6-a5ed-7fdeb7b36f98" LastKnownName="wait for new input from the client" />
+                <elementDefinition Id="94ad7919-7f4c-47cc-ae3f-4166ae8e308a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="45c1ae3c-767c-43b6-a5ed-7fdeb7b36f98" name="wait for new input from the client" isLeaf="false">
+            <elementDefinition Id="322d6c98-f17f-422c-b8f0-174c235c5bca" />
+            <flowNodeTargets>
+              <controlFlow Id="98c4196d-a778-4731-928e-c99e92faf50c" guard="client timeout" isLeaf="false">
+                <activityFinalNodeMoniker Id="8997fb86-1a0c-41e0-8e46-ec93e96aa3a3" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="c0a7727e-39b0-48a7-90e1-90b60fca7254" />
+              </controlFlow>
+              <controlFlow Id="1b3d1692-e2da-499b-b948-e85e4dd3bc69" isLeaf="false">
+                <opaqueActionMoniker Id="a4b71f2c-07bf-4468-b231-a58590cff882" LastKnownName="forward the work to the input handler and wait for the output" />
+                <elementDefinition Id="162e01d8-0021-403b-9193-219f5a157ebd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="8997fb86-1a0c-41e0-8e46-ec93e96aa3a3" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="7259a7e3-4f39-4ed9-a892-a0d0a9b654ad" />
+          </activityFinalNode>
+          <opaqueAction Id="a4b71f2c-07bf-4468-b231-a58590cff882" name="forward the work to the input handler and wait for the output" isLeaf="false">
+            <elementDefinition Id="d9cc8118-8d31-4f4b-830f-42a8af099dc2" />
+            <flowNodeTargets>
+              <controlFlow Id="2bee03b9-aeec-438a-99ef-93254e41bc0d" guard="calculation has finished" isLeaf="false">
+                <opaqueActionMoniker Id="3d494420-7365-46aa-97e5-4f5943103a76" LastKnownName="send the calculated output back to the client" />
+                <elementDefinition Id="a1f011a8-a861-4eac-8a7a-1141dabc10d2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3d494420-7365-46aa-97e5-4f5943103a76" name="send the calculated output back to the client" isLeaf="false">
+            <elementDefinition Id="1b1247bc-90d1-4c00-81d4-c6c7ae5b6b74" />
+            <flowNodeTargets>
+              <controlFlow Id="751eac1d-06d5-45ab-9ac8-7173592e5bf5" isLeaf="false">
+                <opaqueActionMoniker Id="45c1ae3c-767c-43b6-a5ed-7fdeb7b36f98" LastKnownName="wait for new input from the client" />
+                <elementDefinition Id="14ac85dc-59ef-44e7-a01c-6d2584d59297" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="2bdeb413-b8f1-4a71-bcfa-9325334fe171" name="Modeling">
+    <elementDefinition Id="5a142094-2f52-4229-b3ba-19bd65b6141b" />
+  </package>
+</activityRootModel>

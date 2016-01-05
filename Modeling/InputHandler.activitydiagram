@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="75b4efcc-f534-4301-b047-b8430a584478" name="InputHandler" linkedPackageId="8f73cbd0-0510-4435-b570-3ec86fede9a3" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="ec85f0e5-f729-41b5-8ced-b37b7510619d">
+      <profileInstance Id="3798e711-cb8d-4906-bac0-84161bb36268" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="96b72105-56fb-485f-bf52-0a7f3c5ee66d">
+      <profileInstance Id="e5ddfb43-d18c-4148-8abb-2900247423aa" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="c6736d93-2b1f-448c-83bf-d2c4ac6a047a" name="InputHandler" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="256ff8ca-a5f7-4f50-aee4-19f44c4b02e1" />
+        <nodes>
+          <initialNode Id="27584fe8-84e2-4928-b8be-39c358980826" name="Initial1" isLeaf="false">
+            <elementDefinition Id="50129b6d-3f81-4455-9c21-d08838da255d" />
+            <flowNodeTargets>
+              <controlFlow Id="fb1631d8-df5d-4843-9bd9-aeabe8c36b2d" guard="handleInput()" isLeaf="false">
+                <opaqueActionMoniker Id="88525271-89fd-4255-910d-846415bee87b" LastKnownName="Parse the input into single command strings" />
+                <elementDefinition Id="bf463f46-90a5-444c-ac18-9cff03917b4e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="88525271-89fd-4255-910d-846415bee87b" name="Parse the input into single command strings" isLeaf="false">
+            <elementDefinition Id="3f5c9180-db27-49cc-ab8a-985789dced4e" />
+            <flowNodeTargets>
+              <controlFlow Id="edf768e9-cc9a-480b-9063-cc9b1a254b08" isLeaf="false">
+                <opaqueActionMoniker Id="86e47559-f6b5-42c3-9591-75ca01706a7e" LastKnownName="Parse every command string to an command object" />
+                <elementDefinition Id="e9d6c5d1-cd2b-42a3-80da-7b087c442cd4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="86e47559-f6b5-42c3-9591-75ca01706a7e" name="Parse every command string to an command object" isLeaf="false">
+            <elementDefinition Id="cb2e12a5-aa42-44b8-8cf1-9105e0197eaa" />
+            <flowNodeTargets>
+              <controlFlow Id="2def653b-e660-444e-8159-e909331444a5" isLeaf="false">
+                <opaqueActionMoniker Id="6f726e6e-50aa-4c5b-a2c0-26e682b1af4c" LastKnownName="Execute the command" />
+                <elementDefinition Id="286101be-71a9-4b97-b0c5-768b410c17a9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6f726e6e-50aa-4c5b-a2c0-26e682b1af4c" name="Execute the command" isLeaf="false">
+            <elementDefinition Id="a60ce334-0325-4571-97a8-bc5888f583bd" />
+            <flowNodeTargets>
+              <controlFlow Id="b3cdf433-9ac9-4027-85f7-ea2ad0a64cc7" isLeaf="false">
+                <activityFinalNodeMoniker Id="b181a2bc-17d7-478c-93b3-5a55008b06ef" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="05211528-a9a2-431a-949b-ddec1f7d5398" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="b181a2bc-17d7-478c-93b3-5a55008b06ef" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="2299019f-3013-4efe-b50f-b65d53e11b2f" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="8f73cbd0-0510-4435-b570-3ec86fede9a3" name="Modeling">
+    <elementDefinition Id="5a142094-2f52-4229-b3ba-19bd65b6141b" />
+  </package>
+</activityRootModel>

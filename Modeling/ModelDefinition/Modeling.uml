@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="5a142094-2f52-4229-b3ba-19bd65b6141b"
   name="Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -571,7 +571,7 @@
           <association
             Id="40ff94c0-af8e-40f3-88e6-979d5d33409d"
             isDerived="false"
-            sourceEndRoleName="listener"
+            sourceEndRoleName=""
             targetEndRoleName="runningSessions"
             isLeaf="false"
             isAbstract="false">
@@ -583,7 +583,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="a4753760-9236-4188-a758-95ac8cc10966"
-                  name="listener"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -623,7 +622,7 @@
           <association
             Id="0f9366fe-3760-4632-909e-076b366f117a"
             isDerived="false"
-            sourceEndRoleName="listener"
+            sourceEndRoleName=""
             targetEndRoleName="clients"
             isLeaf="false"
             isAbstract="false">
@@ -635,7 +634,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="90b719fd-40bb-415e-9b5d-4ec7b2214e68"
-                  name="listener"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -696,7 +694,7 @@
           <association
             Id="8a532ca5-bb3b-4b5f-b3ab-db2ab93e1d8d"
             isDerived="false"
-            sourceEndRoleName="session"
+            sourceEndRoleName=""
             targetEndRoleName="connectedClient"
             isLeaf="false"
             isAbstract="false">
@@ -708,7 +706,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="cfb1d7d9-b765-47f9-9286-454cd461ab4a"
-                  name="session"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -735,7 +732,7 @@
           <association
             Id="d4a777fb-bcd1-4f18-812d-bbf59856bc8e"
             isDerived="false"
-            sourceEndRoleName="session"
+            sourceEndRoleName=""
             targetEndRoleName="inputHandler"
             isLeaf="false"
             isAbstract="false">
@@ -747,7 +744,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="d8591e3b-26a5-4831-b245-059fb72a508f"
-                  name="session"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -774,6 +770,44 @@
                 <memberEnd
                   Id="b9664615-6b95-40df-8ca5-c23b1e06f7e6"
                   name="inputHandler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ae5005b4-ba0c-4620-bef7-399c03325bb9"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="outputHandler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d95de970-ecd5-4732-8ef3-5adc595fd52e"
+              LastKnownName="OutputHandler"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1f48ee2a-8c46-41be-9aeb-2ecee39b4320"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0cf4ac30-e6c4-4300-86d1-6bc65dab95a5"
+                  name="outputHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -879,7 +913,7 @@
     <packageHasNamedElement>
       <Interface
         Id="2c23ee67-8e56-4792-a6ff-0434c6dfee47"
-        name="CommandExecuterInterface"
+        name="CommandExecuter"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
@@ -998,7 +1032,7 @@
             isAbstract="false">
             <interfaceMoniker
               Id="2c23ee67-8e56-4792-a6ff-0434c6dfee47"
-              LastKnownName="CommandExecuterInterface"
+              LastKnownName="CommandExecuter"
               LastKnownLocation="Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1044,7 +1078,7 @@
           <association
             Id="5bd9808c-fa18-48b0-a1c1-7c85111384e3"
             isDerived="false"
-            sourceEndRoleName="inputHandler"
+            sourceEndRoleName=""
             targetEndRoleName="commandParser"
             isLeaf="false"
             isAbstract="false">
@@ -1056,7 +1090,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="c925672e-0b1b-4af0-bc63-249133875a28"
-                  name="inputHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1083,7 +1116,7 @@
           <association
             Id="1fb15773-9327-4860-8619-a5fe5e4bf6fc"
             isDerived="false"
-            sourceEndRoleName="inputHandler"
+            sourceEndRoleName=""
             targetEndRoleName="inputParser"
             isLeaf="false"
             isAbstract="false">
@@ -1095,7 +1128,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="36efff90-5946-4c0b-930d-0fd237c6e918"
-                  name="inputHandler"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1116,6 +1148,57 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="547c325e-b45c-47a6-9303-f04cfd4228ba"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="commandExecuter"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="856e1159-8fd6-48c2-969e-d67075f6a75b"
+              LastKnownName="AbstractCommandExecuter"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8466e019-b3b9-476c-bae0-387578f45e1b"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="77052746-b20b-47ff-a58e-a4b7996c2da2"
+                  name="commandExecuter"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e9749128-b6ab-47b9-965f-f7885a5137e1"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3bc6595b-650e-4a5b-ae27-8ded12f7c703"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -1321,10 +1404,20 @@
             Id="49e02bc2-f35a-481c-b9bd-7318e36e0164">
             <interfaceMoniker
               Id="2c23ee67-8e56-4792-a6ff-0434c6dfee47"
-              LastKnownName="CommandExecuterInterface"
+              LastKnownName="CommandExecuter"
               LastKnownLocation="Modeling.uml" />
           </dependency>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="1d35199a-f963-4085-b4c2-4368e498e937"
+            isSubstitutable="false">
+            <classMoniker
+              Id="856e1159-8fd6-48c2-969e-d67075f6a75b"
+              LastKnownName="AbstractCommandExecuter"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1339,11 +1432,861 @@
             Id="837ba5db-fb37-4a44-91ef-dd9ebc9679dc">
             <interfaceMoniker
               Id="2c23ee67-8e56-4792-a6ff-0434c6dfee47"
-              LastKnownName="CommandExecuterInterface"
+              LastKnownName="CommandExecuter"
               LastKnownLocation="Modeling.uml" />
           </dependency>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="ecd6f2df-cd13-40ca-860e-b165995754e3"
+            isSubstitutable="false">
+            <classMoniker
+              Id="856e1159-8fd6-48c2-969e-d67075f6a75b"
+              LastKnownName="AbstractCommandExecuter"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="c757c791-283d-44b0-a5b4-61d18194e260"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="aa7e59d9-3f9a-4422-b8e5-3e88abd16fad"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="17838368-483d-4bc3-997a-ba89c75df508"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ea5dcadf-531d-4ed2-bce5-45c7933416c4"
+                  LastKnownName="listen"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="ea5dcadf-531d-4ed2-bce5-45c7933416c4"
+            name="listen"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="568ad731-a218-4f24-9975-614e31d666f7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ab173426-00ba-4959-aa4d-c749dbb7eeed"
+                  LastKnownName="check current amount of connected clients"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ab173426-00ba-4959-aa4d-c749dbb7eeed"
+            name="check current amount of connected clients"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="71fa803d-d404-407f-8e46-6c06405f1c23"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="faa5ce01-821a-49d2-a27b-0cd06bcc7590"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="259fc807-8a46-418a-b90a-db729a1b67f7"
+            name="create a session for the new client"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8730b01b-43d8-457a-a7b2-8b60dc78441e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9070e3df-0dd3-4b82-80f7-466113f4f777"
+                  LastKnownName="start the new session"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9070e3df-0dd3-4b82-80f7-466113f4f777"
+            name="start the new session"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c83fff5a-5563-46b8-ad09-26ea0df89f40"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ea5dcadf-531d-4ed2-bce5-45c7933416c4"
+                  LastKnownName="listen"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="faa5ce01-821a-49d2-a27b-0cd06bcc7590"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="87bf8374-3a63-4dc5-97f7-21bc13a24f80"
+                guard="&lt;100"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="259fc807-8a46-418a-b90a-db729a1b67f7"
+                  LastKnownName="create a session for the new client"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="eb9b94e2-dd30-4776-a3b5-de2e4e363f0b"
+                guard="&gt;=100"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ea5dcadf-531d-4ed2-bce5-45c7933416c4"
+                  LastKnownName="listen"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="d819410c-48c2-4782-b19b-7133b4c11fc3"
+        name="Session"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="dd88ead4-cecb-44cc-a35a-5f18adeb27ef"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="94ad7919-7f4c-47cc-ae3f-4166ae8e308a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="322d6c98-f17f-422c-b8f0-174c235c5bca"
+                  LastKnownName="wait for new input from the client"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="322d6c98-f17f-422c-b8f0-174c235c5bca"
+            name="wait for new input from the client"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c0a7727e-39b0-48a7-90e1-90b60fca7254"
+                guard="client timeout"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="7259a7e3-4f39-4ed9-a892-a0d0a9b654ad"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="162e01d8-0021-403b-9193-219f5a157ebd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d9cc8118-8d31-4f4b-830f-42a8af099dc2"
+                  LastKnownName="forward the work to the input handler and wait for the output"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="7259a7e3-4f39-4ed9-a892-a0d0a9b654ad"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="d9cc8118-8d31-4f4b-830f-42a8af099dc2"
+            name="forward the work to the input handler and wait for the output"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a1f011a8-a861-4eac-8a7a-1141dabc10d2"
+                guard="calculation has finished"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1b1247bc-90d1-4c00-81d4-c6c7ae5b6b74"
+                  LastKnownName="send the calculated output back to the client"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1b1247bc-90d1-4c00-81d4-c6c7ae5b6b74"
+            name="send the calculated output back to the client"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="14ac85dc-59ef-44e7-a01c-6d2584d59297"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="322d6c98-f17f-422c-b8f0-174c235c5bca"
+                  LastKnownName="wait for new input from the client"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="39345582-6b40-4fce-a2ee-8bbc54ee9ee1"
+        name="Client"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="e19d6488-9cbf-4a9c-8ed5-21049356f397"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a93e433d-ca92-4860-9a21-5998bc5f2dc6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b4d164b5-a2cc-43af-ab18-9db8dacf27f2"
+                  LastKnownName="not allowed"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="b4d164b5-a2cc-43af-ab18-9db8dacf27f2"
+            name="not allowed"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2a301ea0-177d-4574-8121-1fc227dd492e"
+                guard="user allows the client"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7e7851ad-4ab3-476f-8973-aed31ab4b6df"
+                  LastKnownName="allowed"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7e7851ad-4ab3-476f-8973-aed31ab4b6df"
+            name="allowed"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0e09ce4c-9eb6-4aa0-bd81-df08dd2cb5ed"
+                guard="user blocks the client"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b4d164b5-a2cc-43af-ab18-9db8dacf27f2"
+                  LastKnownName="not allowed"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="256ff8ca-a5f7-4f50-aee4-19f44c4b02e1"
+        name="InputHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="50129b6d-3f81-4455-9c21-d08838da255d"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="bf463f46-90a5-444c-ac18-9cff03917b4e"
+                guard="handleInput()"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3f5c9180-db27-49cc-ab8a-985789dced4e"
+                  LastKnownName="Parse the input into single command strings"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="3f5c9180-db27-49cc-ab8a-985789dced4e"
+            name="Parse the input into single command strings"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e9d6c5d1-cd2b-42a3-80da-7b087c442cd4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cb2e12a5-aa42-44b8-8cf1-9105e0197eaa"
+                  LastKnownName="Parse every command string to an command object"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="cb2e12a5-aa42-44b8-8cf1-9105e0197eaa"
+            name="Parse every command string to an command object"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="286101be-71a9-4b97-b0c5-768b410c17a9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a60ce334-0325-4571-97a8-bc5888f583bd"
+                  LastKnownName="Execute the command"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a60ce334-0325-4571-97a8-bc5888f583bd"
+            name="Execute the command"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="05211528-a9a2-431a-949b-ddec1f7d5398"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="2299019f-3013-4efe-b50f-b65d53e11b2f"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="2299019f-3013-4efe-b50f-b65d53e11b2f"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d95de970-ecd5-4732-8ef3-5adc595fd52e"
+        name="OutputHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="71593c1f-a79a-414b-9224-8643da861306"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="outputComposer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="78280bc5-4ee2-4f35-9e87-eebb3ebf189a"
+              LastKnownName="OutputComposer"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fd2c0178-e7a6-41d0-a8b9-ce4f21f7fb35"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6d4c85f2-cb7b-4668-b8ae-1c5752937102"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6525cfeb-1269-47f6-8418-e77a0a29b660"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6cb33385-55d1-4258-9cb6-8c2ab7ceed96"
+                  name="outputComposer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3b29ff1f-8ba4-49bf-b86d-9ad6f797dc8e"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="commandComposer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="68cb626d-cf80-4b17-85b8-8f8862018188"
+              LastKnownName="CommandComposer"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b02de088-d320-4d6f-bfc3-723a6f0c2c68"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="daff982a-b07c-4a05-aebc-54ca7c57cfcc"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="95938383-37eb-45ff-a66b-f996d7160cce"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="feddf2db-53af-4664-9c69-63a7d3d06a5b"
+                  name="commandComposer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e06c4c05-2ccc-4a62-b49d-e0f5a7894701"
+            name="buffer"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="438a4535-7193-4cf8-876a-68ffe836b1ba"
+                LastKnownName="string[]"
+                LastKnownLocation="Modeling.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c3726ac5-12f6-4455-b173-62879a0f7660"
+            name="getBufferedOutput"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7a0430c6-e613-4ae6-b486-c9e744b75d9e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2a402c24-da5e-4e79-9b96-be5acbfde2d5"
+            name="addOutputCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9ba2cee0-00f0-4334-ad1a-988a0e5372b3"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="68cb626d-cf80-4b17-85b8-8f8862018188"
+        name="CommandComposer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="24abd289-0d85-4b66-8958-f331ddb80681"
+            name="compose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9d1188e6-143d-4c2c-b748-51d6d3a6bc3b"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a7873ce8-9846-42de-9eeb-f49fc40db501"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="78280bc5-4ee2-4f35-9e87-eebb3ebf189a"
+        name="OutputComposer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="95ff83a8-a2c2-43ef-a9eb-8ad7b991e396"
+            name="compose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b3538fb-8ec9-4394-901d-f18bdd60726c"
+                  name="commandStrings"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="438a4535-7193-4cf8-876a-68ffe836b1ba"
+                      LastKnownName="string[]"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bf7d6a55-37c1-4a3a-9873-0e1ad5b5a74e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="856e1159-8fd6-48c2-969e-d67075f6a75b"
+        name="AbstractCommandExecuter"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="da552d5f-2d2c-4b95-9e25-f6a9dd2dd324"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="outputHandler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d95de970-ecd5-4732-8ef3-5adc595fd52e"
+              LastKnownName="OutputHandler"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ca237633-1506-4248-a589-2fdc1406fb7c"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="54c0fd25-7a3e-4962-b37b-2f1e1c188177"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e56c2a3b-8e79-4e68-8140-f7418fb2b461"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3fa96c55-3bd2-484a-9549-4cbf0d2e8f94"
+                  name="outputHandler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="ff936668-be07-497e-9306-0ccfc7463716"
+            name="tryToExecuteCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="48df32ae-1a94-465e-812d-777df40775f8"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5e0addcd-8234-492f-9188-aa033ecb0163"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="86def847-0e17-4f99-9689-5f30b06ca26e"
+                      LastKnownName="boolean"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="490b0d00-8a26-435c-b37a-ceaa7b8ac94d"
+        name="OutputHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="d60f5002-bd4d-4347-8772-200ddba96270"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b283c38a-7b0c-47f0-841b-2e965610c5a3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e8a64dbb-2d59-421f-86b5-1fc81999ea50"
+                  LastKnownName="wait"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="e8a64dbb-2d59-421f-86b5-1fc81999ea50"
+            name="wait"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0e7ae6e9-97db-4c57-b386-6ec3050abab2"
+                guard="addOutputCommand()"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="55f11e04-68fa-4ac1-b994-cb73bce7b99a"
+                  LastKnownName="compose command to string"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="d25e27e5-5d2d-4fe9-a363-9ea36d039ec9"
+                guard="getOutput()"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b1766f9d-45a8-4555-8a58-a3f6b9b3e25f"
+                  LastKnownName="compose all command strings to one ouput string"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="55f11e04-68fa-4ac1-b994-cb73bce7b99a"
+            name="compose command to string"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="df1db364-9a6e-41f2-b093-0f3cfc82735f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="87cc8249-5f33-41dd-9b9e-e730c6d4386b"
+                  LastKnownName="add command string to buffer"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="87cc8249-5f33-41dd-9b9e-e730c6d4386b"
+            name="add command string to buffer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e7729339-31ff-40df-87a6-90505fd7f94f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e8a64dbb-2d59-421f-86b5-1fc81999ea50"
+                  LastKnownName="wait"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b1766f9d-45a8-4555-8a58-a3f6b9b3e25f"
+            name="compose all command strings to one ouput string"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ef3b3eb4-cbdf-4761-b5e8-1d4627853eb4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b6ddf9b1-471a-479b-9c55-c6bb3d15f90a"
+                  LastKnownName="clear buffer"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b6ddf9b1-471a-479b-9c55-c6bb3d15f90a"
+            name="clear buffer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8addf124-5617-4543-ac42-6a893bf7b3ba"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e8a64dbb-2d59-421f-86b5-1fc81999ea50"
+                  LastKnownName="wait"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

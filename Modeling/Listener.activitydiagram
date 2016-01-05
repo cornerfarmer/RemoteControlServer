@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="9fdc1f8c-50ae-48e7-aefa-50179aa9aed1" name="Activity1" linkedPackageId="aa762eb2-c251-433f-b963-0dba9da50b67" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="f671becd-51d7-435c-9fa2-f770d48385a4">
+      <profileInstance Id="b5dea91d-511e-4f6b-b7d9-a91403f47544" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2ecdfc8a-416d-4049-a60d-a481dd20109c">
+      <profileInstance Id="48a965ff-c83d-4669-bc41-366d013eb77b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="6ed33486-906d-4811-b42e-379717978354" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c757c791-283d-44b0-a5b4-61d18194e260" />
+        <nodes>
+          <initialNode Id="84b05725-889e-4e22-acb9-569462582d71" name="Initial1" isLeaf="false">
+            <elementDefinition Id="aa7e59d9-3f9a-4422-b8e5-3e88abd16fad" />
+            <flowNodeTargets>
+              <controlFlow Id="a244659a-b25a-4a2a-a22c-6a1783013c99" isLeaf="false">
+                <opaqueActionMoniker Id="198637b2-f52f-443a-82f6-6321ad053268" LastKnownName="listen" />
+                <elementDefinition Id="17838368-483d-4bc3-997a-ba89c75df508" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="198637b2-f52f-443a-82f6-6321ad053268" name="listen" isLeaf="false">
+            <elementDefinition Id="ea5dcadf-531d-4ed2-bce5-45c7933416c4" />
+            <flowNodeTargets>
+              <controlFlow Id="3cb3f06d-5e60-40b2-bb63-784f0fba1faa" isLeaf="false">
+                <opaqueActionMoniker Id="e9884f7e-f33b-42cb-a9bf-a91ad3662dc4" LastKnownName="check current amount of connected clients" />
+                <elementDefinition Id="568ad731-a218-4f24-9975-614e31d666f7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e9884f7e-f33b-42cb-a9bf-a91ad3662dc4" name="check current amount of connected clients" isLeaf="false">
+            <elementDefinition Id="ab173426-00ba-4959-aa4d-c749dbb7eeed" />
+            <flowNodeTargets>
+              <controlFlow Id="bacbd872-e947-426b-833e-bad80f1e8e91" isLeaf="false">
+                <decisionNodeMoniker Id="78081386-478b-4458-8464-9a055dc837cc" LastKnownName="Decision1" />
+                <elementDefinition Id="71fa803d-d404-407f-8e46-6c06405f1c23" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="28d17227-71fa-4807-89d4-f0f691b18892" name="create a session for the new client" isLeaf="false">
+            <elementDefinition Id="259fc807-8a46-418a-b90a-db729a1b67f7" />
+            <flowNodeTargets>
+              <controlFlow Id="a3d4dcb1-257e-47d8-9821-d6208c2b1cbe" isLeaf="false">
+                <opaqueActionMoniker Id="bc9aed8f-cd4b-47ce-9480-c5489c16e282" LastKnownName="start the new session" />
+                <elementDefinition Id="8730b01b-43d8-457a-a7b2-8b60dc78441e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="bc9aed8f-cd4b-47ce-9480-c5489c16e282" name="start the new session" isLeaf="false">
+            <elementDefinition Id="9070e3df-0dd3-4b82-80f7-466113f4f777" />
+            <flowNodeTargets>
+              <controlFlow Id="66e1b0b4-5e03-48ae-9b4b-f6ad6cecbc7e" isLeaf="false">
+                <opaqueActionMoniker Id="198637b2-f52f-443a-82f6-6321ad053268" LastKnownName="listen" />
+                <elementDefinition Id="c83fff5a-5563-46b8-ad09-26ea0df89f40" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="78081386-478b-4458-8464-9a055dc837cc" name="Decision1" isLeaf="false">
+            <elementDefinition Id="faa5ce01-821a-49d2-a27b-0cd06bcc7590" />
+            <flowNodeTargets>
+              <controlFlow Id="397e6eaa-dac9-4856-8e4e-64769cb398fc" guard="&lt;100" isLeaf="false">
+                <opaqueActionMoniker Id="28d17227-71fa-4807-89d4-f0f691b18892" LastKnownName="create a session for the new client" />
+                <elementDefinition Id="87bf8374-3a63-4dc5-97f7-21bc13a24f80" />
+              </controlFlow>
+              <controlFlow Id="1873453a-0c55-4525-8062-4f129c6c5828" guard="&gt;=100" isLeaf="false">
+                <opaqueActionMoniker Id="198637b2-f52f-443a-82f6-6321ad053268" LastKnownName="listen" />
+                <elementDefinition Id="eb9b94e2-dd30-4776-a3b5-de2e4e363f0b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="aa762eb2-c251-433f-b963-0dba9da50b67" name="Modeling">
+    <elementDefinition Id="5a142094-2f52-4229-b3ba-19bd65b6141b" />
+  </package>
+</activityRootModel>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="4cf0439c-8a43-4049-8005-567d2ec7abe9" name="OutputHandler" linkedPackageId="f8687b22-8638-454d-a31b-8ddbe863aa24" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="2cbaf853-7bdb-4069-8ff5-2a8ddf73685e">
+      <profileInstance Id="d71f22a3-e4e1-4d45-8a96-d027cace7f5c" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2acab99c-a504-4354-b253-6f8eb9483ded">
+      <profileInstance Id="fca318f7-4bf1-42b8-ae1a-0238198ac7eb" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="1d6939bc-f924-44db-9553-9ff7c631cf72" name="OutputHandler" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="490b0d00-8a26-435c-b37a-ceaa7b8ac94d" />
+        <nodes>
+          <initialNode Id="3fa1c7b2-32ad-40c3-9cca-44419406b81c" name="Initial1" isLeaf="false">
+            <elementDefinition Id="d60f5002-bd4d-4347-8772-200ddba96270" />
+            <flowNodeTargets>
+              <controlFlow Id="6d9dd7c0-b8c5-4861-b73e-d6947e086a72" isLeaf="false">
+                <opaqueActionMoniker Id="e283c908-385a-44fa-bfbc-c0958891e904" LastKnownName="wait" />
+                <elementDefinition Id="b283c38a-7b0c-47f0-841b-2e965610c5a3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="e283c908-385a-44fa-bfbc-c0958891e904" name="wait" isLeaf="false">
+            <elementDefinition Id="e8a64dbb-2d59-421f-86b5-1fc81999ea50" />
+            <flowNodeTargets>
+              <controlFlow Id="ea483141-0a70-4011-9e4d-77621cb2c890" guard="addOutputCommand()" isLeaf="false">
+                <opaqueActionMoniker Id="cbaaf95e-0ddd-4828-84d7-4bc55be3444e" LastKnownName="compose command to string" />
+                <elementDefinition Id="0e7ae6e9-97db-4c57-b386-6ec3050abab2" />
+              </controlFlow>
+              <controlFlow Id="5b1b63dd-3e70-4be6-aa5c-276601f9e648" guard="getOutput()" isLeaf="false">
+                <opaqueActionMoniker Id="12abf893-f807-419c-bf6c-7e9d02a07d1b" LastKnownName="compose all command strings to one ouput string" />
+                <elementDefinition Id="d25e27e5-5d2d-4fe9-a363-9ea36d039ec9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="cbaaf95e-0ddd-4828-84d7-4bc55be3444e" name="compose command to string" isLeaf="false">
+            <elementDefinition Id="55f11e04-68fa-4ac1-b994-cb73bce7b99a" />
+            <flowNodeTargets>
+              <controlFlow Id="d1390304-042c-4235-8e0c-c682dd6c1b04" isLeaf="false">
+                <opaqueActionMoniker Id="8f76c772-8cf4-4048-8cce-14bc11a72323" LastKnownName="add command string to buffer" />
+                <elementDefinition Id="df1db364-9a6e-41f2-b093-0f3cfc82735f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8f76c772-8cf4-4048-8cce-14bc11a72323" name="add command string to buffer" isLeaf="false">
+            <elementDefinition Id="87cc8249-5f33-41dd-9b9e-e730c6d4386b" />
+            <flowNodeTargets>
+              <controlFlow Id="c8c3ac8c-dc97-498f-84c0-6813adfbc0cb" isLeaf="false">
+                <opaqueActionMoniker Id="e283c908-385a-44fa-bfbc-c0958891e904" LastKnownName="wait" />
+                <elementDefinition Id="e7729339-31ff-40df-87a6-90505fd7f94f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="12abf893-f807-419c-bf6c-7e9d02a07d1b" name="compose all command strings to one ouput string" isLeaf="false">
+            <elementDefinition Id="b1766f9d-45a8-4555-8a58-a3f6b9b3e25f" />
+            <flowNodeTargets>
+              <controlFlow Id="f9ce93f1-fa19-49fa-b0fb-54cac06732b2" isLeaf="false">
+                <opaqueActionMoniker Id="12440832-1f11-40d4-8905-0eb0fbd945bf" LastKnownName="clear buffer" />
+                <elementDefinition Id="ef3b3eb4-cbdf-4761-b5e8-1d4627853eb4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="12440832-1f11-40d4-8905-0eb0fbd945bf" name="clear buffer" isLeaf="false">
+            <elementDefinition Id="b6ddf9b1-471a-479b-9c55-c6bb3d15f90a" />
+            <flowNodeTargets>
+              <controlFlow Id="5fc60187-7a1d-441a-845e-e2f53d9f5179" isLeaf="false">
+                <opaqueActionMoniker Id="e283c908-385a-44fa-bfbc-c0958891e904" LastKnownName="wait" />
+                <elementDefinition Id="8addf124-5617-4543-ac42-6a893bf7b3ba" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="f8687b22-8638-454d-a31b-8ddbe863aa24" name="Modeling">
+    <elementDefinition Id="5a142094-2f52-4229-b3ba-19bd65b6141b" />
+  </package>
+</activityRootModel>

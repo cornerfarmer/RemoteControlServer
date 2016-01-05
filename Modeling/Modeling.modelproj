@@ -22,12 +22,47 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Client.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Client.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Client.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="DomainModel.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="DomainModel.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>DomainModel.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="InputHandler.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InputHandler.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InputHandler.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Listener.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Listener.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Listener.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="OutputHandler.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="OutputHandler.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>OutputHandler.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Session.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Session.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Session.activitydiagram</DependentUpon>
     </Content>
     <Content Include="UMLUseCaseDiagram.usecasediagram">
       <SubType>Content</SubType>
