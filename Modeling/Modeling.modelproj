@@ -29,6 +29,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Client.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="ClientConnects.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ClientConnects.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ClientConnects.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="DomainModel.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -56,6 +63,13 @@
     <Content Include="OutputHandler.activitydiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>OutputHandler.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="remoteCommand.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="remoteCommand.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>remoteCommand.sequencediagram</DependentUpon>
     </Content>
     <Content Include="Session.activitydiagram">
       <SubType>Content</SubType>
