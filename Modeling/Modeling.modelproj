@@ -36,6 +36,13 @@
       <SubType>Content</SubType>
       <DependentUpon>ClientConnects.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="ComponentDiagram.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ComponentDiagram.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ComponentDiagram.componentdiagram</DependentUpon>
+    </Content>
     <Content Include="DomainModel.classdiagram">
       <SubType>Content</SubType>
     </Content>
