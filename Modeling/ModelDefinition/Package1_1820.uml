@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
+  dslVersion="1.0.0.0"
+  Id="e32dcb6f-3cfa-4fdf-8b0d-063a412c4cb7"
+  name="CommandExecuter" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="64bca019-8ee9-44b1-b374-96540fc155d2"
+        name="PDVDCommandExecuter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2278d2c7-50fa-4723-98f3-11a43af8e1b8"
+        name="AbstractCommandExecuter"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="77abdeb3-380c-421c-b1af-d239642c31ce">
+            <interfaceMoniker
+              Id="d81b65cb-27f7-403c-b931-05b763fb6e87"
+              LastKnownName="CommandExecuter"
+              LastKnownLocation="Package1_1805.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c82fe6bf-fe15-46e8-b131-59651fc0fb99"
+            name="tryToExecuteCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="de4497f1-0e3a-49a0-a91e-063523ecee1b"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="13c1c691-fb36-4427-9365-4034941e0fc6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="86def847-0e17-4f99-9689-5f30b06ca26e"
+                      LastKnownName="boolean"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="296733e2-8e91-41b8-932c-2b48d31ec798"
+        name="PDVDCommandExecuter1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="1646b748-9c68-4883-9830-6a77c69457a8"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2278d2c7-50fa-4723-98f3-11a43af8e1b8"
+              LastKnownName="AbstractCommandExecuter"
+              LastKnownLocation="Package1_1820.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dbc990bd-67c3-4911-a6fc-b38a2157f16c"
+        name="WindowsCommandExecuter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="3d1f5f8b-ecc8-475f-a5d1-0a005efc7b02"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2278d2c7-50fa-4723-98f3-11a43af8e1b8"
+              LastKnownName="AbstractCommandExecuter"
+              LastKnownLocation="Package1_1820.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

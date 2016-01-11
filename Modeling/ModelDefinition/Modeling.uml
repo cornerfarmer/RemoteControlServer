@@ -5877,7 +5877,7 @@
     <packageHasNamedElement>
       <component
         Id="8d02a531-199f-4f5a-884a-c52ddfa6aa95"
-        name="GUI"
+        name="UI"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -6117,6 +6117,84 @@
         Id="2399af19-1d81-4d53-9eff-2362a2defa55"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="40256720-0b2e-4aa8-8061-e9bbb53d3f92"
+        LastKnownName="Listener"
+        LastKnownLocation="Package_1803.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="cf1d6fc7-6847-4026-a18e-41c5883a1d0b"
+        LastKnownName="GUI"
+        LastKnownLocation="Package1_1803.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1243e557-2fb5-40dc-a9c2-f4d1aa1b19be"
+        LastKnownName="InputHandler"
+        LastKnownLocation="Package_1804.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="71c564d2-b45f-45f2-a03c-cd5efe6f8cc8"
+        LastKnownName="Parser"
+        LastKnownLocation="Package1_1804.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0f2d30ef-34ae-45e3-8700-07440293a263"
+        LastKnownName="OutputHandler"
+        LastKnownLocation="Package2_1804.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="dc073f56-eda5-4698-892a-dbedfa2da437"
+        LastKnownName="ClientService"
+        LastKnownLocation="Package3_1804.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="453f8ce6-f60f-4dda-8665-4b32d7bbc36c"
+        LastKnownName="ClientRepository"
+        LastKnownLocation="Package4_1804.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a67d8340-ccae-48a2-b9b6-d60696a18cdf"
+        LastKnownName="Composer"
+        LastKnownLocation="Package_1805.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e0976427-dfbb-4911-9eb9-2d7262cb9e54"
+        LastKnownName="Definitions"
+        LastKnownLocation="Package1_1805.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d4e891ac-1502-4b33-ad2d-7c64535ea03f"
+        LastKnownName="ConsoleLogger"
+        LastKnownLocation="Package_1812.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="cef7439f-1493-4340-9260-94c9c5083cdc"
+        LastKnownName="Command"
+        LastKnownLocation="Package_1820.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e32dcb6f-3cfa-4fdf-8b0d-063a412c4cb7"
+        LastKnownName="CommandExecuter"
+        LastKnownLocation="Package1_1820.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4b091671-c58b-4cc4-973a-c2e2e996325d"
+        LastKnownName="WindowsCommandExecuter"
+        LastKnownLocation="Package2_1820.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
