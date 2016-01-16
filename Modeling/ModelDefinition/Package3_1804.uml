@@ -61,6 +61,46 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="c6e65361-33e7-4b27-8c90-cab7b039fff5"
+            name="getClientForNewConnection"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8a514934-30d9-4939-ad4f-3cfb7ce8223c"
+                  name="ip"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ddf17429-bf8e-47ac-9109-be009210ddfb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9f72c0a2-e1cf-47b6-823e-788f7fd8425f"
+                      LastKnownName="Client"
+                      LastKnownLocation="Package1_1805.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>

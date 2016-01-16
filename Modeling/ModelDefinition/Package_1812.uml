@@ -20,6 +20,33 @@
               LastKnownLocation="Package1_1805.uml" />
           </dependency>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="43763afa-bb40-46b2-a733-dac9f475f0f3"
+            name="log"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1f54ea2-96cc-4f5b-b8fb-e68760cb1051"
+                  name="message"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>

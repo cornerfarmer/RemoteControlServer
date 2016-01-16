@@ -9,70 +9,470 @@
         Id="45a2ab78-fc1d-4a42-a4df-4dbb64085464"
         name="InputHandler"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="b6a211e2-764c-4692-b007-a621b6dab5c5"
+            name="handleInput"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cc21e7b4-e531-486e-b833-176c8f26a608"
+                  name="input"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="4eb08cc7-7c67-436c-85a2-b30e1401bc85"
         name="OutputHandler"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="d0f4424b-b22c-4520-81ce-1e2087af80e5"
+            name="addOutputCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b8201c1-aa85-4cbf-afad-8aa16311b0a9"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f7f69246-7c70-4c9d-be42-e24740fb3d11"
+            name="getBufferedOutput"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="29252d80-df5d-420e-b311-e3a1d325a0e2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="1e7c2ea2-a516-4935-9507-e0c88794ae6c"
         name="InputParser"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="1b37df29-2358-4b90-98e4-64cf7d7cdf69"
+            name="parse"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="93fdd291-324a-436b-a397-d2b8900b0679"
+                  name="input"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ea9a7a62-f099-41ae-af77-dd74cc4b462a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="438a4535-7193-4cf8-876a-68ffe836b1ba"
+                      LastKnownName="string[]"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="208aaaa1-9e46-4160-ab47-ab861b316434"
         name="ClientRepository"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="cda0a778-f49d-4862-8e97-f230f87f4640"
+            name="getClientWithIp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a326ce08-1db3-42e3-b71b-6e365781013e"
+                  name="ip"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="88c40636-4a0c-41f2-b925-f61f86367ed8"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9f72c0a2-e1cf-47b6-823e-788f7fd8425f"
+                      LastKnownName="Client"
+                      LastKnownLocation="Package1_1805.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="b9c06006-95f2-4ba8-a049-af1ac0082d63"
         name="OutputComposer"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="88eaab14-5e01-42e5-bb24-408d66b88d9d"
+            name="compose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6851cec3-f46d-485e-8439-17f068c2c421"
+                  name="commandStrings"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="438a4535-7193-4cf8-876a-68ffe836b1ba"
+                      LastKnownName="string[]"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e21f9683-967b-450e-a4c6-e028e66ec0e1"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="061813a2-8ea4-4de3-b9bb-0fcb1c8d59c0"
         name="ClientService"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="ce1a9847-f778-4836-9060-bef54ae69930"
+            name="getClientForNewConnection"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4aaa7837-9f90-4d4d-9ac5-0fba3ecf05b2"
+                  name="ip"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="34d3412a-95f4-4de2-a9d7-76f4cb914b48"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9f72c0a2-e1cf-47b6-823e-788f7fd8425f"
+                      LastKnownName="Client"
+                      LastKnownLocation="Package1_1805.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="9d2be728-bce8-4ef3-8e12-2f1e3eea3848"
         name="Logger"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="da798e64-2832-436c-8606-65492dfcb0d3"
+            name="log"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1ef8ffd9-8679-4fe2-8ba9-c1412136354e"
+                  name="message"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="d81b65cb-27f7-403c-b931-05b763fb6e87"
         name="CommandExecuter"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="ae21413e-2593-4495-8668-8ea272dfdf2c"
+            name="tryToExecuteCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2125a4e0-967a-4853-8b53-74b5b4283a6e"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="739a50f6-aa7f-477b-937a-f0320144e079"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="86def847-0e17-4f99-9689-5f30b06ca26e"
+                      LastKnownName="boolean"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="f32ddd4b-8b5a-4719-9949-2c6a8e5a776e"
         name="CommandParser"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="47d8c355-83cf-4187-8372-8f08dabf7dfd"
+            name="parseCommand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ccb8cb2f-7551-4c53-96f4-71fc360054ad"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14c17bf8-9681-4f0a-9013-4bd421f119ea"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="5ebe85cd-2d96-4692-9198-eec3bad238c5"
         name="CommandComposer"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="6d97357e-a6c2-47ec-83ff-bb0e06755377"
+            name="compose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="91e9a527-9359-4e1b-9977-ccf56e1bc6f7"
+                  name="command"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c3872908-6663-47c5-a281-5026f576e828"
+                      LastKnownName="Command"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d1cb3db-a7a3-4820-967a-7b80ae4044e9"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9f72c0a2-e1cf-47b6-823e-788f7fd8425f"
+        name="Client" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -20,6 +20,46 @@
               LastKnownLocation="Package1_1805.uml" />
           </dependency>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e63c03e3-7667-402d-97a9-2b731a02a751"
+            name="getClientWithIp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="92e9171a-6c76-4b21-8238-3a0ec877f8c0"
+                  name="ip"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="616c228f-6c23-4e8b-8b30-554e847c133b"
+                      LastKnownName="string"
+                      LastKnownLocation="Modeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="320c94af-bb59-43e0-adf9-01ff16cdb429"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9f72c0a2-e1cf-47b6-823e-788f7fd8425f"
+                      LastKnownName="Client"
+                      LastKnownLocation="Package1_1805.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>
