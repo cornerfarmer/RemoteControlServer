@@ -11,6 +11,49 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6fb0608c-a371-4248-b62b-1d70ddb13186"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c6458d84-8da5-476c-be44-da7a1dc11b4f">
+                <propertyInstance
+                  Id="31d329a3-3a3f-460a-9a91-7b6aa7575aa7"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c651e795-bb95-4c80-9482-57c219ed287e">
+                <propertyInstance
+                  Id="3fe70107-d4e9-477d-86d9-bb75a87ffd0f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b5d16bd8-df99-4c8a-a941-5c9ffab72f3e">
+                <propertyInstance
+                  Id="edd0d0fa-2545-4221-ad94-b7cea4645481"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e836fb32-d5bf-4aa9-ab05-bd83c256a0f2">
+                <propertyInstance
+                  Id="6b69184a-e210-4375-b015-69205f4f5e3d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8a3cf7d0-8d3d-45d5-a7bc-e1bec21ae3c9">
+                <propertyInstance
+                  Id="1c5de73f-2088-4b41-afa8-cff54bb23626"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
             Id="94a0de99-b4a5-40e7-b8e8-eef8567835f7"
