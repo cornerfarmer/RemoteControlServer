@@ -4,16 +4,17 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Parser
+namespace Composer
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using Definitions;
 
-	public class CommandParser
+	public class CommandComposer
 	{
-		public virtual Command parseCommand(string command)
+		public virtual string compose(Command command)
 		{
 			throw new System.NotImplementedException();
 		}

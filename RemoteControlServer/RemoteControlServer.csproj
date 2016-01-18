@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>ninject\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +61,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\ClientRepository\ClientRepository.cs" />
+    <Compile Include="src\ClientService\ClientService.cs" />
+    <Compile Include="src\CommandExecuter\AbstractCommandExecuter.cs" />
+    <Compile Include="src\CommandExecuter\PDVDCommandExecuter1.cs" />
+    <Compile Include="src\CommandExecuter\WindowsCommandExecuter.cs" />
+    <Compile Include="src\Command\Command.cs" />
+    <Compile Include="src\Composer\CommandComposer.cs" />
+    <Compile Include="src\Composer\OutputComposer.cs" />
+    <Compile Include="src\ConsoleLogger\ConsoleLogger.cs" />
+    <Compile Include="src\Definitions\Command.cs" />
+    <Compile Include="src\Definitions\Client.cs" />
+    <Compile Include="src\Definitions\ClientRepository.cs" />
+    <Compile Include="src\Definitions\ClientService.cs" />
+    <Compile Include="src\Definitions\CommandComposer.cs" />
+    <Compile Include="src\Definitions\CommandExecuter.cs" />
+    <Compile Include="src\Definitions\CommandParser.cs" />
+    <Compile Include="src\Definitions\InputHandler.cs" />
+    <Compile Include="src\Definitions\InputParser.cs" />
+    <Compile Include="src\Definitions\Logger.cs" />
+    <Compile Include="src\Definitions\OutputComposer.cs" />
+    <Compile Include="src\Definitions\OutputHandler.cs" />
+    <Compile Include="src\GUI\Window.cs" />
+    <Compile Include="src\InputHandler\InputHandler.cs" />
+    <Compile Include="src\Listener\Client.cs" />
+    <Compile Include="src\Listener\Listener.cs" />
+    <Compile Include="src\Listener\Session.cs" />
+    <Compile Include="src\OutputHandler\OutputHandler.cs" />
+    <Compile Include="src\Parser\CommandParser.cs" />
+    <Compile Include="src\Parser\InputParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -40,38 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeneratedCode\ClientRepository\ClientRepository.cs" />
-    <Compile Include="GeneratedCode\ClientService\ClientService.cs" />
-    <Compile Include="GeneratedCode\CommandExecuter\AbstractCommandExecuter.cs" />
-    <Compile Include="GeneratedCode\CommandExecuter\PDVDCommandExecuter1.cs" />
-    <Compile Include="GeneratedCode\CommandExecuter\WindowsCommandExecuter.cs" />
-    <Compile Include="GeneratedCode\Command\Command.cs" />
-    <Compile Include="GeneratedCode\Composer\CommandComposer.cs" />
-    <Compile Include="GeneratedCode\Composer\OutputComposer.cs" />
-    <Compile Include="GeneratedCode\ConsoleLogger\ConsoleLogger.cs" />
-    <Compile Include="GeneratedCode\Definitions\Client.cs" />
-    <Compile Include="GeneratedCode\Definitions\ClientRepository.cs" />
-    <Compile Include="GeneratedCode\Definitions\ClientService.cs" />
-    <Compile Include="GeneratedCode\Definitions\CommandComposer.cs" />
-    <Compile Include="GeneratedCode\Definitions\CommandExecuter.cs" />
-    <Compile Include="GeneratedCode\Definitions\CommandParser.cs" />
-    <Compile Include="GeneratedCode\Definitions\InputHandler.cs" />
-    <Compile Include="GeneratedCode\Definitions\InputParser.cs" />
-    <Compile Include="GeneratedCode\Definitions\Logger.cs" />
-    <Compile Include="GeneratedCode\Definitions\OutputComposer.cs" />
-    <Compile Include="GeneratedCode\Definitions\OutputHandler.cs" />
-    <Compile Include="GeneratedCode\GUI\Window.cs" />
-    <Compile Include="GeneratedCode\InputHandler\InputHandler.cs" />
-    <Compile Include="GeneratedCode\Listener\Client.cs" />
-    <Compile Include="GeneratedCode\Listener\Listener.cs" />
-    <Compile Include="GeneratedCode\Listener\Session.cs" />
-    <Compile Include="GeneratedCode\OutputHandler\OutputHandler.cs" />
-    <Compile Include="GeneratedCode\Parser\CommandParser.cs" />
-    <Compile Include="GeneratedCode\Parser\InputParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

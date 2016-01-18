@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ninject.Planning.Bindings;
 
 namespace RemoteControlServer
 {
-    class Program
+    static class Configurator
     {
-        static void Main(string[] args)
+        public static void execute()
         {
-            Configurator.execute();
-            Listener.Listener listener = new Listener.Listener();
-            listener.run();
+            
         }
     }
 }

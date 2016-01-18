@@ -4,39 +4,15 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Listener
+namespace Definitions
 {
-	using Definitions;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
 
-	public class Listener
+	public interface Command 
 	{
-		public virtual IEnumerable<Session> runningSessions
-		{
-			get;
-			set;
-		}
-
-		public virtual Client clients
-		{
-			get;
-			set;
-		}
-
-		public virtual ClientService ClientService
-		{
-			get;
-			set;
-		}
-
-		public virtual void listen()
-		{
-			throw new System.NotImplementedException();
-		}
-
 	}
 }
 

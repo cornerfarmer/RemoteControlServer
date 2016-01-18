@@ -4,16 +4,20 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Definitions
+namespace Parser
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using Definitions;
 
-	public interface CommandExecuter 
+    public class CommandParser
 	{
-		boolean tryToExecuteCommand(Command command);
+		public virtual Command parseCommand(string command)
+		{
+			throw new System.NotImplementedException();
+		}
 
 	}
 }

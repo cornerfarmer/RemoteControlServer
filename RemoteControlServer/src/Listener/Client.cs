@@ -25,7 +25,7 @@ namespace Listener
 			set;
 		}
 
-		public virtual boolean allowed
+		public virtual Boolean allowed
 		{
 			get;
 			set;

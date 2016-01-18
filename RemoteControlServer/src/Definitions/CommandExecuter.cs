@@ -4,19 +4,17 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Composer
+namespace Definitions
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using Definitions;
 
-	public class CommandComposer
+    public interface CommandExecuter 
 	{
-		public virtual string compose(Command command)
-		{
-			throw new System.NotImplementedException();
-		}
+		Boolean tryToExecuteCommand(Command command);
 
 	}
 }

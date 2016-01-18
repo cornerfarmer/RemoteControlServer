@@ -4,35 +4,17 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Listener
+namespace CommandExecuter
 {
-	using Definitions;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using Definitions;
 
-	public class Session
+	public abstract class AbstractCommandExecuter
 	{
-		public virtual Client connectedClient
-		{
-			get;
-			set;
-		}
-
-		public virtual InputHandler InputHandler
-		{
-			get;
-			set;
-		}
-
-		public virtual OutputHandler OutputHandler
-		{
-			get;
-			set;
-		}
-
-		public virtual void start()
+		public virtual Boolean tryToExecuteCommand(Command command)
 		{
 			throw new System.NotImplementedException();
 		}
