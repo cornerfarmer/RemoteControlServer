@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface IOutputComposer 
 	{
-		string compose(string[] commandStrings);
+		string compose(List<string> commandStrings);
 
 	}
 }

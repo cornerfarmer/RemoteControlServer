@@ -14,11 +14,50 @@ namespace RemoteControlServer.Parser
 
     public class InputParser : IInputParser
 	{
-		public virtual string[] parse(string input)
-		{
-			throw new System.NotImplementedException();
-		}
 
+        List<string> commandStrings;
+
+        public virtual List<string> parse(string input)
+		{
+            commandStrings = new List<string>();
+
+            parseCommandStrings(input);
+
+            return commandStrings;
+        }
+
+        private void parseCommandStrings(string input)
+        {
+            while (isCommandLeft(input))
+            {
+                addNextCommandString(input);
+                input = proceedToNextCommandString(input);
+            }
+        }
+
+        private bool isCommandLeft(string input)
+        {
+            return input != "";
+        }
+
+        private void addNextCommandString(string input)
+        {
+            string commandString = getNextCommandString(input);
+            if (commandString.Length > 0)
+            {
+                commandStrings.Add(commandString);
+            }
+        }
+
+        private string getNextCommandString(string input)
+        {
+            return input.Substring(0, input.IndexOf(";"));
+        }
+
+        private string proceedToNextCommandString(string input)
+        {
+            return input.Substring(input.IndexOf(";") + 1);
+        }
 	}
 }
 

@@ -40,7 +40,7 @@ namespace RemoteControlServer.InputHandler
 
 		public virtual void handleInput(string input)
 		{
-            string[] commandStrings = inputParser.parse(input);
+            List<string> commandStrings = inputParser.parse(input);
             foreach (String commandString in commandStrings)
             {
                 ICommand command = commandParser.parseCommand(commandString);

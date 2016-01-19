@@ -14,11 +14,39 @@ namespace RemoteControlServer.Composer
 
     public class OutputComposer : IOutputComposer
     {
-		public virtual string compose(string[] commandStrings)
+        private string output;
+		public virtual string compose(List<string> commandStrings)
 		{
-			throw new System.NotImplementedException();
-		}
+            output = "";
+            addCommandStrings(commandStrings);
+            addOutputEnd();
+            return output;
+        }
+        
+        private void addCommandStrings(List<string> commandStrings)
+        {
+            foreach (string commandString in commandStrings)
+            {
+                addCommandString(commandString);
+                addCommandSeperator();
+            }
+        }
 
-	}
+        private void addCommandString(string commandString)
+        {
+            output += commandString;
+        }
+
+        private void addCommandSeperator()
+        {
+            output += ";";
+        }
+
+        private void addOutputEnd()
+        {
+            output += ";";
+        }
+
+    }
 }
 

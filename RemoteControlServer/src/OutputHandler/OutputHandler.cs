@@ -14,28 +14,37 @@ namespace RemoteControlServer.OutputHandler
 
 	public class OutputHandler : IOutputHandler
     {
-		public virtual string[] buffer
+		public virtual List<string> buffer
 		{
 			get;
 			set;
 		}
 
-		public virtual IOutputComposer OutputComposer
+		public virtual IOutputComposer outputComposer
 		{
 			get;
 			set;
 		}
 
-		public virtual ICommandComposer CommandComposer
+		public virtual ICommandComposer commandComposer
 		{
 			get;
 			set;
 		}
 
-		public virtual string getBufferedOutput()
+        public OutputHandler(IOutputComposer outputComposer_, ICommandComposer commandComposer_)
+        {
+            outputComposer = outputComposer_;
+            commandComposer = commandComposer_;
+            buffer = new List<string>();
+        }
+
+        public virtual string getBufferedOutput()
 		{
-			throw new System.NotImplementedException();
-		}
+            string output = outputComposer.compose(buffer);
+            buffer.Clear();
+            return output;
+        }
 
 		public virtual void addOutputCommand(ICommand command)
 		{

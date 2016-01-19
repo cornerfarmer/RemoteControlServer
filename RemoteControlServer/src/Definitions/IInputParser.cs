@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface IInputParser 
 	{
-		string[] parse(string input);
+        List<string> parse(string input);
 
 	}
 }
