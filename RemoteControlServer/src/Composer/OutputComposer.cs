@@ -4,15 +4,16 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Composer
+namespace RemoteControlServer.Composer
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Definitions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public class OutputComposer
-	{
+    public class OutputComposer : IOutputComposer
+    {
 		public virtual string compose(string[] commandStrings)
 		{
 			throw new System.NotImplementedException();

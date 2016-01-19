@@ -4,17 +4,16 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Definitions
+namespace RemoteControlServer.Definitions
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
-    using Definitions;
 
-    public interface CommandExecuter 
+	public interface IInputParser 
 	{
-		Boolean tryToExecuteCommand(Command command);
+		string[] parse(string input);
 
 	}
 }

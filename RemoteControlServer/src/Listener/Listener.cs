@@ -4,9 +4,12 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Listener
+namespace RemoteControlServer.Listener
 {
     using Definitions;
+    using Ninject;
+    using Ninject.Parameters;
+    using RemoteControlServer;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -28,7 +31,7 @@ namespace Listener
 			set;
 		}
 
-		public virtual ClientService ClientService
+		public virtual IClientService ClientService
 		{
 			get;
 			set;
@@ -74,7 +77,8 @@ namespace Listener
         {
             Thread myThread = new Thread(() =>
             {
-                Session session = new Session(client);
+                IKernel kernel = new StandardKernel(new Configurator());
+                Session session = kernel.Get<Session>(new ConstructorArgument("client_", client));
                 session.start();
             });
             myThread.Start();

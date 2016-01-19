@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace ClientRepository
+namespace RemoteControlServer.ClientRepository
 {
 	using Definitions;
 	using System;
@@ -12,9 +12,9 @@ namespace ClientRepository
 	using System.Linq;
 	using System.Text;
 
-	public class ClientRepository
-	{
-		public virtual Client getClientWithIp(string ip)
+	public class ClientRepository : IClientRepository
+    {
+		public virtual IClient getClientWithIp(string ip)
 		{
 			throw new System.NotImplementedException();
 		}

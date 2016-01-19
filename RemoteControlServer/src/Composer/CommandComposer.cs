@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Composer
+namespace RemoteControlServer.Composer
 {
 	using System;
 	using System.Collections.Generic;
@@ -12,9 +12,9 @@ namespace Composer
 	using System.Text;
     using Definitions;
 
-	public class CommandComposer
-	{
-		public virtual string compose(Command command)
+	public class CommandComposer : ICommandComposer
+    {
+		public virtual string compose(ICommand command)
 		{
 			throw new System.NotImplementedException();
 		}

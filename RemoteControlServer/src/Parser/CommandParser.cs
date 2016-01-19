@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Parser
+namespace RemoteControlServer.Parser
 {
 	using System;
 	using System.Collections.Generic;
@@ -12,9 +12,9 @@ namespace Parser
 	using System.Text;
     using Definitions;
 
-    public class CommandParser
+    public class CommandParser : ICommandParser
 	{
-		public virtual Command parseCommand(string command)
+		public virtual ICommand parseCommand(string command)
 		{
 			throw new System.NotImplementedException();
 		}

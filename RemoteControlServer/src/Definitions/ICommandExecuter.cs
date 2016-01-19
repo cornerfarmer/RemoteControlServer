@@ -4,18 +4,17 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Definitions
+namespace RemoteControlServer.Definitions
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using Definitions;
 
-	public interface OutputHandler 
+    public interface ICommandExecuter 
 	{
-		void addOutputCommand(Command command);
-
-		string getBufferedOutput();
+		Boolean tryToExecuteCommand(ICommand command);
 
 	}
 }

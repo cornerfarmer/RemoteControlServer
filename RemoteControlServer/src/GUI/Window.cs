@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace GUI
+namespace RemoteControlServer.GUI
 {
 	using Definitions;
 	using System;
@@ -14,7 +14,7 @@ namespace GUI
 
 	public class Window
 	{
-		public virtual ClientService ClientService
+		public virtual IClientService ClientService
 		{
 			get;
 			set;

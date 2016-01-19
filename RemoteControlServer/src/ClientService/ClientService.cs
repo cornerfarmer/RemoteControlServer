@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace ClientService
+namespace RemoteControlServer.ClientService
 {
 	using Definitions;
 	using System;
@@ -12,15 +12,15 @@ namespace ClientService
 	using System.Linq;
 	using System.Text;
 
-	public class ClientService
-	{
-		public virtual ClientRepository ClientRepository
+	public class ClientService : IClientService
+    {
+		public virtual IClientRepository ClientRepository
 		{
 			get;
 			set;
 		}
 
-		public virtual Client getClientForNewConnection(string ip)
+		public virtual IClient getClientForNewConnection(string ip)
 		{
 			throw new System.NotImplementedException();
 		}

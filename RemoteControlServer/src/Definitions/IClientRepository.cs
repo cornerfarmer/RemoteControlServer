@@ -4,16 +4,16 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Definitions
+namespace RemoteControlServer.Definitions
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
 
-	public interface CommandComposer 
+	public interface IClientRepository 
 	{
-		string compose(Command command);
+		IClient getClientWithIp(string ip);
 
 	}
 }

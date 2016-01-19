@@ -4,15 +4,16 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace ConsoleLogger
+namespace RemoteControlServer.ConsoleLogger
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Definitions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public class ConsoleLogger
-	{
+    public class ConsoleLogger : ILogger
+    {
 		public virtual void log(string message)
 		{
 			throw new System.NotImplementedException();

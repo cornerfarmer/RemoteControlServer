@@ -4,14 +4,15 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Parser
+namespace RemoteControlServer.Parser
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Definitions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public class InputParser
+    public class InputParser : IInputParser
 	{
 		public virtual string[] parse(string input)
 		{

@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace CommandExecuter
+namespace RemoteControlServer.CommandExecuter
 {
 	using System;
 	using System.Collections.Generic;
@@ -12,9 +12,9 @@ namespace CommandExecuter
 	using System.Text;
     using Definitions;
 
-	public abstract class AbstractCommandExecuter
+	public abstract class AbstractCommandExecuter : ICommandExecuter
 	{
-		public virtual Boolean tryToExecuteCommand(Command command)
+		public virtual Boolean tryToExecuteCommand(ICommand command)
 		{
 			throw new System.NotImplementedException();
 		}

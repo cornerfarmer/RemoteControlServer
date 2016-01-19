@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Listener
+namespace RemoteControlServer.Listener
 {
     using Definitions;
     using System;
@@ -21,13 +21,13 @@ namespace Listener
 			set;
 		}
 
-		public virtual InputHandler InputHandler
+		public virtual IInputHandler inputHandler
 		{
 			get;
 			set;
 		}
 
-		public virtual OutputHandler OutputHandler
+		public virtual IOutputHandler outputHandler
 		{
 			get;
 			set;
@@ -36,9 +36,11 @@ namespace Listener
         private TcpClient client;
         private NetworkStream stream;
 
-        public Session(TcpClient client_)
+        public Session(TcpClient client_, IInputHandler inputHandler_, IOutputHandler outputHandler_)
         {
             client = client_;
+            inputHandler = inputHandler_;
+            outputHandler = outputHandler_;
         }
 
 		public virtual void start()
@@ -58,7 +60,9 @@ namespace Listener
             while(true)
             {
                 String received = recieveAllData();
-                sendData(";");
+                inputHandler.handleInput(received);
+                String dataToSend = outputHandler.getBufferedOutput();
+                sendData(dataToSend);
             }
         }
 
@@ -80,10 +84,6 @@ namespace Listener
             byte[] msg = System.Text.Encoding.ASCII.GetBytes(dataToSend);
             stream.Write(msg, 0, msg.Length);
         }
-
-
-
-
 
 
 	}

@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace InputHandler
+namespace RemoteControlServer.InputHandler
 {
 	using Definitions;
 	using System;
@@ -12,30 +12,41 @@ namespace InputHandler
 	using System.Linq;
 	using System.Text;
 
-	public class InputHandler
+	public class InputHandler : IInputHandler
 	{
-		public virtual CommandParser CommandParser
+		public virtual ICommandParser commandParser
 		{
 			get;
 			set;
 		}
 
-		public virtual InputParser InputParser
+		public virtual IInputParser inputParser
 		{
 			get;
 			set;
 		}
 
-		public virtual CommandExecuter CommandExecuter
+		public virtual ICommandExecuter commandExecuter
 		{
 			get;
 			set;
 		}
+
+        public InputHandler(ICommandParser commandParser_, IInputParser inputParser_)
+        {
+            commandParser = commandParser_;
+            inputParser = inputParser_;
+        }
 
 		public virtual void handleInput(string input)
 		{
-			throw new System.NotImplementedException();
-		}
+            string[] commandStrings = inputParser.parse(input);
+            foreach (String commandString in commandStrings)
+            {
+                ICommand command = commandParser.parseCommand(commandString);
+                commandExecuter.tryToExecuteCommand(command);
+            }
+        }
 
 	}
 }

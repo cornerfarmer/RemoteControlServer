@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace OutputHandler
+namespace RemoteControlServer.OutputHandler
 {
 	using Definitions;
 	using System;
@@ -12,21 +12,21 @@ namespace OutputHandler
 	using System.Linq;
 	using System.Text;
 
-	public class OutputHandler
-	{
+	public class OutputHandler : IOutputHandler
+    {
 		public virtual string[] buffer
 		{
 			get;
 			set;
 		}
 
-		public virtual OutputComposer OutputComposer
+		public virtual IOutputComposer OutputComposer
 		{
 			get;
 			set;
 		}
 
-		public virtual CommandComposer CommandComposer
+		public virtual ICommandComposer CommandComposer
 		{
 			get;
 			set;
@@ -37,7 +37,7 @@ namespace OutputHandler
 			throw new System.NotImplementedException();
 		}
 
-		public virtual void addOutputCommand(Command command)
+		public virtual void addOutputCommand(ICommand command)
 		{
 			throw new System.NotImplementedException();
 		}

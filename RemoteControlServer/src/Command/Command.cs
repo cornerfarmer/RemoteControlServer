@@ -4,15 +4,16 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Command
+namespace RemoteControlServer.Command
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Definitions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public class Command
-	{
+    public class Command : ICommand
+    {
 		public virtual string name
 		{
 			get;
