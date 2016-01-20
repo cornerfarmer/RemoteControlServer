@@ -34,6 +34,8 @@ namespace RemoteControlServer.Composer
 
         private void addCommandString(string commandString)
         {
+            if (commandString.Contains(";"))
+                throw new ArgumentException("The commandString must not contain a ';'! (" + commandString + ")");
             output += commandString;
         }
 

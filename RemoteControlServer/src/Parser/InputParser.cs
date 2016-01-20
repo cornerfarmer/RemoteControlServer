@@ -51,6 +51,8 @@ namespace RemoteControlServer.Parser
 
         private string getNextCommandString(string input)
         {
+            if (!input.Contains(";"))
+                throw new ArgumentException("The given input '" + input + "' does not terminate correctly!");
             return input.Substring(0, input.IndexOf(";"));
         }
 
