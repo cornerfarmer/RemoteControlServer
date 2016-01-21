@@ -26,16 +26,17 @@ namespace RemoteControlServer.InputHandler
 			set;
 		}
 
-		public virtual ICommandExecuter commandExecuter
+		public virtual ICommandExecuter[] commandExecuters
 		{
 			get;
 			set;
 		}
 
-        public InputHandler(ICommandParser commandParser_, IInputParser inputParser_)
+        public InputHandler(ICommandParser commandParser_, IInputParser inputParser_, ICommandExecuter[] commandExecuters_)
         {
             commandParser = commandParser_;
             inputParser = inputParser_;
+            commandExecuters = commandExecuters_;
         }
 
 		public virtual void handleInput(string input)
@@ -43,11 +44,25 @@ namespace RemoteControlServer.InputHandler
             List<string> commandStrings = inputParser.parse(input);
             foreach (String commandString in commandStrings)
             {
-                ICommand command = commandParser.parseCommand(commandString);
-                commandExecuter.tryToExecuteCommand(command);
+                handleCommandString(commandString);
+            }
+        }
+        
+        private void handleCommandString(String commandString)
+        {
+            handleCommand(commandParser.parseCommand(commandString));
+        }
+
+        private void handleCommand(ICommand command)
+        {
+            foreach (ICommandExecuter commandExecuter in commandExecuters)
+            {
+                bool successful = commandExecuter.tryToExecuteCommand(command);
+                if (successful)
+                    break;
             }
         }
 
-	}
+    }
 }
 
