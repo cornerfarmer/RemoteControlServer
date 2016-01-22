@@ -48,7 +48,8 @@ namespace RemoteControlServer.OutputHandler
 
 		public virtual void addOutputCommand(ICommand command)
 		{
-			throw new System.NotImplementedException();
+            string commandString = commandComposer.compose(command);
+            buffer.Add(commandString);
 		}
 
 	}
