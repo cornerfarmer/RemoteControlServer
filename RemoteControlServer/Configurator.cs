@@ -16,7 +16,6 @@ namespace RemoteControlServer
             this.Bind<IClient>().To<Listener.Client>();
             this.Bind<IClientRepository>().To<ClientRepository.ClientRepository>();
             this.Bind<IClientService>().To<ClientService.ClientService>();
-            this.Bind<ICommand>().To<Command.Command>();
             this.Bind<ICommandComposer>().To<Composer.CommandComposer>();
 
             this.Bind<ICommandParser>().To<Parser.CommandParser>();

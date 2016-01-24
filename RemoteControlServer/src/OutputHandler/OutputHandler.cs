@@ -46,7 +46,7 @@ namespace RemoteControlServer.OutputHandler
             return output;
         }
 
-		public virtual void addOutputCommand(ICommand command)
+		public virtual void addOutputCommand(Command command)
 		{
             string commandString = commandComposer.compose(command);
             buffer.Add(commandString);

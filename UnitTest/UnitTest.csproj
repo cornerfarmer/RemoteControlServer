@@ -58,9 +58,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CommandParserTest.cs" />
     <Compile Include="OutputHandlerTests.cs" />
     <Compile Include="InputHandlerTests.cs" />
-    <Compile Include="ParserTests.cs" />
+    <Compile Include="InputParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComposerTests.cs" />
   </ItemGroup>

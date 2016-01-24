@@ -6,13 +6,18 @@
 //------------------------------------------------------------------------------
 namespace RemoteControlServer.CommandExecuter
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Definitions;
 
-	public class WindowsCommandExecuter : AbstractCommandExecuter
-	{
-	}
+    public class WindowsCommandExecuter : AbstractCommandExecuter
+    {
+        public override bool tryToExecuteCommand(Command command)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 

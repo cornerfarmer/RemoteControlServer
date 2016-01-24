@@ -14,7 +14,7 @@ namespace RemoteControlServer.Composer
 
 	public class CommandComposer : ICommandComposer
     {
-		public virtual string compose(ICommand command)
+		public virtual string compose(Command command)
 		{
 			throw new System.NotImplementedException();
 		}

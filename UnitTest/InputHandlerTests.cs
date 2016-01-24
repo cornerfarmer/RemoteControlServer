@@ -14,19 +14,19 @@ namespace UnitTest
 
         string parsedInput;
         List<string> parsedCommands;
-        List<ICommand> executedCommands1;
-        List<ICommand> executedCommands2;
-        List<ICommand> executedCommands3;
-        ICommand[] commands;
+        List<Command> executedCommands1;
+        List<Command> executedCommands2;
+        List<Command> executedCommands3;
+        Command[] commands;
         [TestInitialize()]
         public void Initialize()
         {
             parsedInput = "";
             parsedCommands = new List<string>();
-            executedCommands1 = new List<ICommand>();
-            executedCommands2 = new List<ICommand>();
-            executedCommands3 = new List<ICommand>();
-            commands = new ICommand[3] { new StubICommand(), new StubICommand(), new StubICommand() };
+            executedCommands1 = new List<Command>();
+            executedCommands2 = new List<Command>();
+            executedCommands3 = new List<Command>();
+            commands = new Command[3] { new Command(), new Command(), new Command() };
             IInputParser fakeInputParser = new StubIInputParser()
             {
                 ParseString = (input) => {
@@ -48,7 +48,7 @@ namespace UnitTest
             ICommandExecuter[] fakeCommandExecuters = new ICommandExecuter[3];
             fakeCommandExecuters[0] = new StubICommandExecuter()
             {
-                 TryToExecuteCommandICommand = (command) =>
+                 TryToExecuteCommandCommand = (command) =>
                  {
                      executedCommands1.Add(command);
                      return false;
@@ -56,7 +56,7 @@ namespace UnitTest
             };
             fakeCommandExecuters[1] = new StubICommandExecuter()
             {
-                TryToExecuteCommandICommand = (command) =>
+                TryToExecuteCommandCommand = (command) =>
                 {
                     executedCommands2.Add(command);
                     return true;
@@ -64,7 +64,7 @@ namespace UnitTest
             };
             fakeCommandExecuters[2] = new StubICommandExecuter()
             {
-                TryToExecuteCommandICommand = (command) =>
+                TryToExecuteCommandCommand = (command) =>
                 {
                     executedCommands3.Add(command);
                     return true;

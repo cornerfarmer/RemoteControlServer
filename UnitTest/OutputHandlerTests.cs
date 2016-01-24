@@ -13,18 +13,18 @@ namespace UnitTest
         OutputHandler outputHandler;
 
         string composedOutput;
-        List<ICommand> composedCommands;
+        List<Command> composedCommands;
         String[] commandStrings;
         List<string> commandStringsToCompose;
-        ICommand[] commands;
+        Command[] commands;
         [TestInitialize()]
         public void Initialize()
         {
             composedOutput = "";
             commandStringsToCompose = new List<string>();
-            composedCommands = new List<ICommand>();
+            composedCommands = new List<Command>();
             commandStrings = new String[3] { "CommandOne|2", "CommandTwo", "CommandThree|10:2" };
-            commands = new ICommand[3] { new StubICommand(), new StubICommand(), new StubICommand() };
+            commands = new Command[3] { new Command(), new Command(), new Command() };
             IOutputComposer fakeOutputComposer = new StubIOutputComposer()
             {
                 ComposeListOfString = (commandStrings) =>
@@ -35,7 +35,7 @@ namespace UnitTest
             };
             ICommandComposer fakeCommandComposer = new StubICommandComposer()
             {
-                ComposeICommand = (command) =>
+                ComposeCommand = (command) =>
                 {
                     composedCommands.Add(command);
                     return commandStrings[composedCommands.Count - 1];

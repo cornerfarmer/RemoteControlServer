@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface ICommandParser 
 	{
-		ICommand parseCommand(string command);
+		Command parseCommand(string command);
 
 	}
 }

@@ -53,7 +53,7 @@ namespace RemoteControlServer.InputHandler
             handleCommand(commandParser.parseCommand(commandString));
         }
 
-        private void handleCommand(ICommand command)
+        private void handleCommand(Command command)
         {
             foreach (ICommandExecuter commandExecuter in commandExecuters)
             {

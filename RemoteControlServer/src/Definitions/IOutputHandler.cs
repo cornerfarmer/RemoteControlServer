@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface IOutputHandler 
 	{
-		void addOutputCommand(ICommand command);
+		void addOutputCommand(Command command);
 
 		string getBufferedOutput();
 

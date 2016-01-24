@@ -12,9 +12,22 @@ namespace RemoteControlServer.CommandExecuter
 	using System.Text;
     using Definitions;
 
-    public abstract class AbstractCommandExecuter : ICommandExecuter
-    {
-        public abstract bool tryToExecuteCommand(Command command);
+	public class PDVDCommandExecuter : AbstractCommandExecuter
+	{
+        private const string PLAY_COMMAND = "PDVD_PLAY";
+
+
+        public override Boolean tryToExecuteCommand(Command command)
+        {
+            if (command.getName() == "PDVD_PLAY")
+            {
+                VMessages messages = new VMessages("PowerDVD");
+                messages.sendKey(System.Windows.Forms.Keys.Space);
+                return true;
+            }
+
+            return false;
+        }
     }
 }
 

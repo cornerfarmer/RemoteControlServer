@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace UnitTest
 {
     [TestClass]
-    public class ParserTests
+    public class InputParserTests
     {
         InputParser inputParser;
             

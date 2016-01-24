@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface ICommandComposer 
 	{
-		string compose(ICommand command);
+		string compose(Command command);
 
 	}
 }

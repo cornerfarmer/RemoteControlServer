@@ -14,11 +14,86 @@ namespace RemoteControlServer.Parser
 
     public class CommandParser : ICommandParser
 	{
-		public virtual ICommand parseCommand(string command)
-		{
-			throw new System.NotImplementedException();
-		}
+        private string[] commandParts;
+        private string commandString;
 
+        public virtual Command parseCommand(string commandString_)
+		{
+            commandString = commandString_;
+            validateCommandString();
+            if (commandHasArguments())            
+                return parseCommandWithArguments();
+            else
+                return parseCommandWithoutArguments();
+        }
+
+        private void validateCommandString()
+        {
+            if (commandString.Length == 0)
+            {
+                throw new ArgumentException("The given commandString is empty.");
+            }
+        }
+
+        private bool commandHasArguments()
+        {
+            return commandString.Contains("|");
+        }
+
+        private Command parseCommandWithArguments()
+        {
+            computeCommandParts();
+            return new Command(getNameOfCommandWithArguments(), getArgumentsOfCommandWithArguments());
+        }
+
+        private void computeCommandParts()
+        {
+            commandParts = commandString.Split('|');
+            if (commandParts.Length != 2)
+            {
+                throw new ArgumentException("The command '" + commandString + "' contains more than one |.");
+            }
+        }
+
+        private String getNameOfCommandWithArguments()
+        {
+            if (commandParts[0].Length == 0)
+            {
+                throw new ArgumentException("The given name of the given commandString '" + commandString + "' is empty.");
+            }
+            return commandParts[0];
+        }
+
+        private string[] getArgumentsOfCommandWithArguments()
+        {
+            string[] arguments = splitArgumentString();
+            validateArguments(arguments);
+            return arguments;
+        }
+
+        private string[] splitArgumentString()
+        {
+            if (commandParts[1].Contains(":"))
+                return commandParts[1].Split(':');
+            else
+                return new string[] { commandParts[1] };
+        }
+
+        private void validateArguments(string[] arguments)
+        {
+            foreach (string argument in arguments)
+            {
+                if (argument.Length == 0)
+                {
+                    throw new ArgumentException("At least one argument of the given commandString '" + commandString + "' is empty.");
+                }
+            }
+        }
+
+        private Command parseCommandWithoutArguments()
+        {
+            return new Command(commandString);
+        }
 	}
 }
 

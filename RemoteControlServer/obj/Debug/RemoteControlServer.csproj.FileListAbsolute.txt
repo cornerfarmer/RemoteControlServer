@@ -1,9 +1,8 @@
-c:\users\dominik\documents\visual studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\RemoteControlServer.exe.config
+C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\RemoteControlServer.exe.config
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\RemoteControlServer.exe
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\RemoteControlServer.pdb
-C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.exe
-C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.pdb
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\Ninject.dll
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\Ninject.pdb
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\Ninject.xml
-C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.csprojResolveAssemblyReference.cache
+C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.exe
+C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.pdb

@@ -14,7 +14,7 @@ namespace RemoteControlServer.Definitions
 
     public interface ICommandExecuter 
 	{
-		Boolean tryToExecuteCommand(ICommand command);
+		Boolean tryToExecuteCommand(Command command);
 
 	}
 }
