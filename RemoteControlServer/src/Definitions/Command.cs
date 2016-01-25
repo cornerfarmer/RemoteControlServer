@@ -45,6 +45,11 @@ namespace RemoteControlServer.Definitions
             return arguments;
         }
 
+        public bool hasArguments()
+        {
+            return arguments.Length != 0;
+        }
+
     }
 }
 

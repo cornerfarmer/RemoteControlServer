@@ -14,6 +14,13 @@ namespace RemoteControlServer.CommandExecuter
 
     public abstract class AbstractCommandExecuter : ICommandExecuter
     {
+        protected IOutputHandler outputHandler;
+
+        public AbstractCommandExecuter(IOutputHandler outputHandler_)
+        {
+            outputHandler = outputHandler_;
+        }
+
         public abstract bool tryToExecuteCommand(Command command);
     }
 }

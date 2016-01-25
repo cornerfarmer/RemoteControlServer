@@ -5,7 +5,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 namespace RemoteControlServer.CommandExecuter
-{
+{   
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -14,6 +14,13 @@ namespace RemoteControlServer.CommandExecuter
 
     public class WindowsCommandExecuter : AbstractCommandExecuter
     {
+
+        public WindowsCommandExecuter(IOutputHandler outputHandler_)
+            : base(outputHandler_)
+        {
+
+        }
+
         public override bool tryToExecuteCommand(Command command)
         {
             throw new NotImplementedException();

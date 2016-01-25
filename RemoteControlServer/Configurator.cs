@@ -24,7 +24,9 @@ namespace RemoteControlServer
             this.Bind<ILogger>().To<ConsoleLogger.ConsoleLogger>();
             this.Bind<IOutputComposer>().To<Composer.OutputComposer>();
             this.Bind<IOutputHandler>().To<OutputHandler.OutputHandler>();
-            
+
+            this.Bind<ICommandExecuter>().To<CommandExecuter.PDVDCommandExecuter>();
+
         }
     }
 }

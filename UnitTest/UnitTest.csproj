@@ -58,6 +58,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CommandComposerTest.cs" />
     <Compile Include="CommandParserTest.cs" />
     <Compile Include="OutputHandlerTests.cs" />
     <Compile Include="InputHandlerTests.cs" />

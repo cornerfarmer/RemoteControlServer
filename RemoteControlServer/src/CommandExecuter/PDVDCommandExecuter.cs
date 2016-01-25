@@ -6,20 +6,30 @@
 //------------------------------------------------------------------------------
 namespace RemoteControlServer.CommandExecuter
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
     using Definitions;
-
-	public class PDVDCommandExecuter : AbstractCommandExecuter
+    using System.Diagnostics;
+    public class PDVDCommandExecuter : AbstractCommandExecuter
 	{
         private const string PLAY_COMMAND = "PDVD_PLAY";
 
+        public PDVDCommandExecuter(IOutputHandler outputHandler_)
+            : base(outputHandler_)
+        {
+            
+        }
 
         public override Boolean tryToExecuteCommand(Command command)
         {
-            if (command.getName() == "PDVD_PLAY")
+            if (command.getName() == "PDVD_Open")
+            {
+                Process.Start("C:\\Program Files (x86)\\CyberLink\\PowerDVD12\\PDVDLaunchPolicy.exe");
+                outputHandler.addOutputCommand(new Command("PDVD_Open", new string[] { "1" }));
+            }
+            else if (command.getName() == "PDVD_PLAY")
             {
                 VMessages messages = new VMessages("PowerDVD");
                 messages.sendKey(System.Windows.Forms.Keys.Space);
