@@ -18,6 +18,7 @@ namespace UnitTest
         List<Command> executedCommands2;
         List<Command> executedCommands3;
         Command[] commands;
+        Client client;
         [TestInitialize()]
         public void Initialize()
         {
@@ -27,6 +28,7 @@ namespace UnitTest
             executedCommands2 = new List<Command>();
             executedCommands3 = new List<Command>();
             commands = new Command[3] { new Command(), new Command(), new Command() };
+            client = new StubClient();
             IInputParser fakeInputParser = new StubIInputParser()
             {
                 ParseString = (input) => {
@@ -76,7 +78,7 @@ namespace UnitTest
         [TestMethod]
         public void InputHandler_EmptyInput_EmptyCalls()
         {
-            inputHandler.handleInput("");
+            inputHandler.handleInput("", client);
             Assert.AreEqual(parsedInput, "");
             Assert.AreEqual(parsedCommands.Count, 0);
             Assert.AreEqual(executedCommands1.Count, 0);
@@ -87,7 +89,7 @@ namespace UnitTest
         [TestMethod]
         public void InputHandler_OneInputCommand_ResultingCalls()
         {
-            inputHandler.handleInput("CommandOne|2;");
+            inputHandler.handleInput("CommandOne|2;", client);
             Assert.AreEqual(parsedInput, "CommandOne|2;");
             Assert.AreEqual(parsedCommands.Count, 1);
             Assert.AreEqual(parsedCommands[0], "commandString0");
@@ -102,7 +104,7 @@ namespace UnitTest
         [TestMethod]
         public void InputHandler_TowInputCommands_ResultingCalls()
         {
-            inputHandler.handleInput("CommandOne|2;CommandTwo;");
+            inputHandler.handleInput("CommandOne|2;CommandTwo;", client);
             Assert.AreEqual(parsedInput, "CommandOne|2;CommandTwo;");
             Assert.AreEqual(parsedCommands.Count, 2);
             Assert.AreEqual(parsedCommands[0], "commandString0");
@@ -119,7 +121,7 @@ namespace UnitTest
         [TestMethod]
         public void InputHandler_ThreeInputCommands_ResultingCalls()
         {
-            inputHandler.handleInput("CommandOne|2;CommandTwo;CommandThree|10:2;");
+            inputHandler.handleInput("CommandOne|2;CommandTwo;CommandThree|10:2;", client);
             Assert.AreEqual(parsedInput, "CommandOne|2;CommandTwo;CommandThree|10:2;");
             Assert.AreEqual(parsedCommands.Count, 3);
             Assert.AreEqual(parsedCommands[0], "commandString0");

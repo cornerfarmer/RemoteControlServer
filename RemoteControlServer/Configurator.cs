@@ -13,19 +13,18 @@ namespace RemoteControlServer
     {
         public override void Load()
         {
-            this.Bind<IClient>().To<Listener.Client>();
-            this.Bind<IClientRepository>().To<ClientRepository.ClientRepository>();
-            this.Bind<IClientService>().To<ClientService.ClientService>();
-            this.Bind<ICommandComposer>().To<Composer.CommandComposer>();
+            this.Bind<IClientRepository>().To<ClientRepository.ClientRepository>().InSingletonScope();
+            this.Bind<IClientService>().To<ClientService.ClientService>().InSingletonScope();
+            this.Bind<ICommandComposer>().To<Composer.CommandComposer>().InSingletonScope();
 
-            this.Bind<ICommandParser>().To<Parser.CommandParser>();
-            this.Bind<IInputHandler>().To<InputHandler.InputHandler>();
-            this.Bind<IInputParser>().To<Parser.InputParser>();
-            this.Bind<ILogger>().To<ConsoleLogger.ConsoleLogger>();
-            this.Bind<IOutputComposer>().To<Composer.OutputComposer>();
-            this.Bind<IOutputHandler>().To<OutputHandler.OutputHandler>();
+            this.Bind<ICommandParser>().To<Parser.CommandParser>().InSingletonScope();
+            this.Bind<IInputHandler>().To<InputHandler.InputHandler>().InSingletonScope();
+            this.Bind<IInputParser>().To<Parser.InputParser>().InSingletonScope();
+            this.Bind<ILogger>().To<ConsoleLogger.ConsoleLogger>().InSingletonScope();
+            this.Bind<IOutputComposer>().To<Composer.OutputComposer>().InSingletonScope();
+            this.Bind<IOutputHandler>().To<OutputHandler.OutputHandler>().InSingletonScope();
 
-            this.Bind<ICommandExecuter>().To<CommandExecuter.PDVDCommandExecuter>();
+            this.Bind<ICommandExecuter>().To<CommandExecuter.PDVDCommandExecuter>().InSingletonScope();
 
         }
     }

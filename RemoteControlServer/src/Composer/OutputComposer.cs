@@ -41,7 +41,7 @@ namespace RemoteControlServer.Composer
 
         private void addCommandSeperator()
         {
-            output += ";";
+            output += ",";
         }
 
         private void addOutputEnd()

@@ -33,26 +33,28 @@ namespace RemoteControlServer.Listener
 			set;
 		}
 
-        private TcpClient client;
+        private TcpClient tcpClient;
+        private Client client;
         private NetworkStream stream;
 
-        public Session(TcpClient client_, IInputHandler inputHandler_, IOutputHandler outputHandler_)
+        public Session(TcpClient tcpClient_, IInputHandler inputHandler_, IOutputHandler outputHandler_)
         {
-            client = client_;
+            tcpClient = tcpClient_;
             inputHandler = inputHandler_;
             outputHandler = outputHandler_;
+            client = new Client();
         }
 
 		public virtual void start()
 		{
             initializeStream();
             communicate();
-            client.Close();
+            tcpClient.Close();
         }
 
         private void initializeStream()
         {
-            stream = client.GetStream();
+            stream = tcpClient.GetStream();
         }
 
         private void communicate()
@@ -60,7 +62,7 @@ namespace RemoteControlServer.Listener
             while(true)
             {
                 String received = recieveAllData();
-                inputHandler.handleInput(received);
+                inputHandler.handleInput(received, client);
                 String dataToSend = outputHandler.getBufferedOutput();
                 sendData(dataToSend);
             }

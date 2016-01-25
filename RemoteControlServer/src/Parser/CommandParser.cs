@@ -75,8 +75,10 @@ namespace RemoteControlServer.Parser
         {
             if (commandParts[1].Contains(":"))
                 return commandParts[1].Split(':');
-            else
+            else if (commandParts[1].Length > 0)
                 return new string[] { commandParts[1] };
+            else
+                return new string[0];
         }
 
         private void validateArguments(string[] arguments)

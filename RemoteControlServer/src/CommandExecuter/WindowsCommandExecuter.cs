@@ -21,6 +21,11 @@ namespace RemoteControlServer.CommandExecuter
 
         }
 
+        public override void refreshClientStates(Client client)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool tryToExecuteCommand(Command command)
         {
             throw new NotImplementedException();

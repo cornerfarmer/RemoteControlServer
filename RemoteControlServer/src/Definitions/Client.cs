@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace RemoteControlServer.Listener
+namespace RemoteControlServer.Definitions
 {
     using Definitions;
     using System;
@@ -12,7 +12,7 @@ namespace RemoteControlServer.Listener
     using System.Linq;
     using System.Text;
 
-    public class Client : IClient
+    public class Client 
 	{
 		public virtual string name
 		{
@@ -31,6 +31,27 @@ namespace RemoteControlServer.Listener
 			get;
 			set;
 		}
+
+        private Dictionary<string, string> states;
+
+        public Client()
+        {
+            states = new Dictionary<string, string>();
+        }
+
+
+        public void setState(string key, string name)
+        {
+            states[key] = name;
+        }
+
+        public string getState(string key)
+        {
+            if (states.ContainsKey(key))
+                return states[key];
+            else
+                return "";
+        }
 
 	}
 }

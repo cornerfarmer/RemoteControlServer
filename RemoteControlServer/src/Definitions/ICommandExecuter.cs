@@ -16,6 +16,8 @@ namespace RemoteControlServer.Definitions
 	{
 		Boolean tryToExecuteCommand(Command command);
 
-	}
+        void refreshClientStates(Client client);
+
+    }
 }
 

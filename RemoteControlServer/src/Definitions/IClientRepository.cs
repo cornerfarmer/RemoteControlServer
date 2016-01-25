@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface IClientRepository 
 	{
-		IClient getClientWithIp(string ip);
+		Client getClientWithIp(string ip);
 
 	}
 }

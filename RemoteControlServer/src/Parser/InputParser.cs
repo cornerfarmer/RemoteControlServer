@@ -21,10 +21,21 @@ namespace RemoteControlServer.Parser
 		{
             commandStrings = new List<string>();
 
+            input = validateInputTermination(input);
             parseCommandStrings(input);
 
             return commandStrings;
         }
+
+
+        private string validateInputTermination(string input)
+        {
+            if (input.Last<char>() != ';')
+                throw new ArgumentException("The given input '" + input + "' does not terminate correctly!");
+            return input.Substring(0, input.Length - 1);
+        }
+
+
 
         private void parseCommandStrings(string input)
         {
@@ -51,14 +62,14 @@ namespace RemoteControlServer.Parser
 
         private string getNextCommandString(string input)
         {
-            if (!input.Contains(";"))
+            if (!input.Contains(","))
                 throw new ArgumentException("The given input '" + input + "' does not terminate correctly!");
-            return input.Substring(0, input.IndexOf(";"));
+            return input.Substring(0, input.IndexOf(","));
         }
 
         private string proceedToNextCommandString(string input)
         {
-            return input.Substring(input.IndexOf(";") + 1);
+            return input.Substring(input.IndexOf(",") + 1);
         }
 	}
 }

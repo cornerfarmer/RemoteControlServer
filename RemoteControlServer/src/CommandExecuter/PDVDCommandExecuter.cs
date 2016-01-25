@@ -15,11 +15,22 @@ namespace RemoteControlServer.CommandExecuter
     public class PDVDCommandExecuter : AbstractCommandExecuter
 	{
         private const string PLAY_COMMAND = "PDVD_PLAY";
+        private VMessages messages;
 
         public PDVDCommandExecuter(IOutputHandler outputHandler_)
             : base(outputHandler_)
         {
-            
+            messages = new VMessages("PowerDVD");
+        }
+
+        public override void refreshClientStates(Client client)
+        {
+            string pdvdOpen = messages.windowExists() ? "1" : "0";
+            if (pdvdOpen != client.getState("PDVD_Open"))
+            {
+                client.setState("PDVD_Open", pdvdOpen);
+                outputHandler.addOutputCommand(new Command("PDVD_Open", new string[] { pdvdOpen }));
+            }
         }
 
         public override Boolean tryToExecuteCommand(Command command)
@@ -28,6 +39,7 @@ namespace RemoteControlServer.CommandExecuter
             {
                 Process.Start("C:\\Program Files (x86)\\CyberLink\\PowerDVD12\\PDVDLaunchPolicy.exe");
                 outputHandler.addOutputCommand(new Command("PDVD_Open", new string[] { "1" }));
+                outputHandler.addOutputCommand(new Command("PDVD_Vol", new string[] { "60" }));
             }
             else if (command.getName() == "PDVD_PLAY")
             {
@@ -38,6 +50,7 @@ namespace RemoteControlServer.CommandExecuter
 
             return false;
         }
+
     }
 }
 

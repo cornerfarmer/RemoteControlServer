@@ -29,7 +29,7 @@ namespace UnitTest
         {
             List<string> commandStrings = new List<string>() { "Command|0:2" };
             string output = outputComposer.compose(commandStrings);
-            Assert.AreEqual(output, "Command|0:2;;");
+            Assert.AreEqual(output, "Command|0:2,;");
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace UnitTest
         {
             List<string> commandStrings = new List<string>() { "FirstCommand|0:2", "SecondCommand", "ThirdCommand|3" };
             string output = outputComposer.compose(commandStrings);
-            Assert.AreEqual(output, "FirstCommand|0:2;SecondCommand;ThirdCommand|3;;");
+            Assert.AreEqual(output, "FirstCommand|0:2,SecondCommand,ThirdCommand|3,;");
         }
 
         [TestMethod]

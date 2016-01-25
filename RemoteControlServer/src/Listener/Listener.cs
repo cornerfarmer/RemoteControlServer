@@ -78,7 +78,7 @@ namespace RemoteControlServer.Listener
             Thread myThread = new Thread(() =>
             {
                 IKernel kernel = new StandardKernel(new Configurator());
-                Session session = kernel.Get<Session>(new ConstructorArgument("client_", client));
+                Session session = kernel.Get<Session>(new ConstructorArgument("tcpClient_", client));
                 session.start();
             });
             myThread.Start();

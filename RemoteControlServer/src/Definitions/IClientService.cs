@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface IClientService 
 	{
-		IClient getClientForNewConnection(string ip);
+		Client getClientForNewConnection(string ip);
 
 	}
 }

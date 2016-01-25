@@ -14,7 +14,7 @@ namespace RemoteControlServer.ClientRepository
 
 	public class ClientRepository : IClientRepository
     {
-		public virtual IClient getClientWithIp(string ip)
+		public virtual Client getClientWithIp(string ip)
 		{
 			throw new System.NotImplementedException();
 		}

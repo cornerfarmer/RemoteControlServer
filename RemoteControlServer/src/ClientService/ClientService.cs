@@ -20,7 +20,7 @@ namespace RemoteControlServer.ClientService
 			set;
 		}
 
-		public virtual IClient getClientForNewConnection(string ip)
+		public virtual Client getClientForNewConnection(string ip)
 		{
 			throw new System.NotImplementedException();
 		}

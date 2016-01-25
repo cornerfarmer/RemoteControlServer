@@ -13,7 +13,7 @@ namespace RemoteControlServer.Definitions
 
 	public interface IInputHandler 
 	{
-		void handleInput(string input);
+		void handleInput(string input, Client client);
 
 	}
 }

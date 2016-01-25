@@ -39,15 +39,19 @@ namespace RemoteControlServer.InputHandler
             commandExecuters = commandExecuters_;
         }
 
-		public virtual void handleInput(string input)
-		{
+        public virtual void handleInput(string input, Client client)
+        {
             List<string> commandStrings = inputParser.parse(input);
             foreach (String commandString in commandStrings)
             {
                 handleCommandString(commandString);
             }
+            foreach (ICommandExecuter commandExecuter in commandExecuters)
+            {
+                commandExecuter.refreshClientStates(client);
+            }
         }
-        
+
         private void handleCommandString(String commandString)
         {
             handleCommand(commandParser.parseCommand(commandString));

@@ -76,7 +76,6 @@
     <Compile Include="src\Composer\CommandComposer.cs" />
     <Compile Include="src\Composer\OutputComposer.cs" />
     <Compile Include="src\ConsoleLogger\ConsoleLogger.cs" />
-    <Compile Include="src\Definitions\IClient.cs" />
     <Compile Include="src\Definitions\IClientRepository.cs" />
     <Compile Include="src\Definitions\IClientService.cs" />
     <Compile Include="src\Definitions\ICommandComposer.cs" />
@@ -89,7 +88,7 @@
     <Compile Include="src\Definitions\IOutputHandler.cs" />
     <Compile Include="src\GUI\Window.cs" />
     <Compile Include="src\InputHandler\InputHandler.cs" />
-    <Compile Include="src\Listener\Client.cs" />
+    <Compile Include="src\Definitions\Client.cs" />
     <Compile Include="src\Listener\Listener.cs" />
     <Compile Include="src\Listener\Session.cs" />
     <Compile Include="src\OutputHandler\OutputHandler.cs" />

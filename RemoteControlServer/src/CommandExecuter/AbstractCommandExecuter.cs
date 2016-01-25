@@ -22,6 +22,8 @@ namespace RemoteControlServer.CommandExecuter
         }
 
         public abstract bool tryToExecuteCommand(Command command);
+
+        public abstract void refreshClientStates(Client client);
     }
 }
 
