@@ -37,7 +37,14 @@ namespace RemoteControlServer.Listener
 			set;
 		}
 
+        private ILogger logger;
+
         private TcpListener server;
+
+        public Listener(ILogger logger_)
+        {
+            logger = logger_;
+        }
 
         public virtual void run()
 		{
@@ -50,9 +57,8 @@ namespace RemoteControlServer.Listener
         {
             while (true)
             {
-                Console.Write("Waiting for a connection... ");
-
                 TcpClient client = waitForNewClient();
+                logger.log("New client connected: " + client.Client.RemoteEndPoint);
                 startNewSessionThread(client);
             }
         }
@@ -66,6 +72,7 @@ namespace RemoteControlServer.Listener
         {
             IPAddress localAddr = IPAddress.Parse("192.168.178.32");
             server = new TcpListener(localAddr, 10);
+            logger.log("Listener started on ip " + localAddr);
         }
 
         private void startServer()

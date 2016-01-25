@@ -50,6 +50,11 @@ namespace RemoteControlServer.Definitions
             return arguments.Length != 0;
         }
 
+        public override string ToString()
+        {
+            return name + "(" + string.Join(".", arguments)  + ")";
+        }
+
     }
 }
 

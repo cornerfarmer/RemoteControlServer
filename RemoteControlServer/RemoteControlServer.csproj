@@ -48,11 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>naudio\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>ninject\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,6 +72,7 @@
     <Compile Include="src\ClientRepository\ClientRepository.cs" />
     <Compile Include="src\ClientService\ClientService.cs" />
     <Compile Include="src\CommandExecuter\AbstractCommandExecuter.cs" />
+    <Compile Include="src\CommandExecuter\AudioController.cs" />
     <Compile Include="src\CommandExecuter\PDVDCommandExecuter.cs" />
     <Compile Include="src\CommandExecuter\VMessages.cs" />
     <Compile Include="src\CommandExecuter\Win32.cs" />

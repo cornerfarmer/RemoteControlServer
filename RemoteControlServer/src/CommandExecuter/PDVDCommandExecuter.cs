@@ -20,11 +20,12 @@ namespace RemoteControlServer.CommandExecuter
         public PDVDCommandExecuter(IOutputHandler outputHandler_)
             : base(outputHandler_)
         {
-            messages = new VMessages("PowerDVD");
+            
         }
 
         public override void refreshClientStates(Client client)
         {
+            messages = new VMessages("PowerDVD");
             string pdvdOpen = messages.windowExists() ? "1" : "0";
             if (pdvdOpen != client.getState("PDVD_Open"))
             {
@@ -38,13 +39,15 @@ namespace RemoteControlServer.CommandExecuter
             if (command.getName() == "PDVD_Open")
             {
                 Process.Start("C:\\Program Files (x86)\\CyberLink\\PowerDVD12\\PDVDLaunchPolicy.exe");
-                outputHandler.addOutputCommand(new Command("PDVD_Open", new string[] { "1" }));
-                outputHandler.addOutputCommand(new Command("PDVD_Vol", new string[] { "60" }));
             }
-            else if (command.getName() == "PDVD_PLAY")
+            else if (command.getName() == "PDVD_PlayPause")
             {
-                VMessages messages = new VMessages("PowerDVD");
                 messages.sendKey(System.Windows.Forms.Keys.Space);
+                return true;
+            }
+            else if (command.getName() == "PDVD_Vol")
+            {
+                AudioController.setMasterVolume(Convert.ToInt32(command.getArguments()[0]));
                 return true;
             }
 

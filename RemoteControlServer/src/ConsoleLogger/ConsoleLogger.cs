@@ -16,7 +16,7 @@ namespace RemoteControlServer.ConsoleLogger
     {
 		public virtual void log(string message)
 		{
-			throw new System.NotImplementedException();
+            Console.WriteLine("[" + DateTime.Now.ToShortTimeString() + "] " + message);
 		}
 
 	}

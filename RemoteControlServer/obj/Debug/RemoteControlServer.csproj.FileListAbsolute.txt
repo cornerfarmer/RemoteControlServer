@@ -7,3 +7,5 @@ C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\Remot
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.exe
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.pdb
 C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\obj\Debug\RemoteControlServer.csprojResolveAssemblyReference.cache
+C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\NAudio.dll
+C:\Users\Dominik\Documents\Visual Studio 2015\Projects\RemoteControlServer\RemoteControlServer\bin\Debug\NAudio.xml

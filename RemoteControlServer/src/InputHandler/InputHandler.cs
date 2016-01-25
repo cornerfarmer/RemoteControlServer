@@ -32,11 +32,14 @@ namespace RemoteControlServer.InputHandler
 			set;
 		}
 
-        public InputHandler(ICommandParser commandParser_, IInputParser inputParser_, ICommandExecuter[] commandExecuters_)
+        private ILogger logger;
+
+        public InputHandler(ICommandParser commandParser_, IInputParser inputParser_, ICommandExecuter[] commandExecuters_, ILogger logger_)
         {
             commandParser = commandParser_;
             inputParser = inputParser_;
             commandExecuters = commandExecuters_;
+            logger = logger_;
         }
 
         public virtual void handleInput(string input, Client client)
@@ -59,6 +62,7 @@ namespace RemoteControlServer.InputHandler
 
         private void handleCommand(Command command)
         {
+            logger.log("Recieved command: " + command);
             foreach (ICommandExecuter commandExecuter in commandExecuters)
             {
                 bool successful = commandExecuter.tryToExecuteCommand(command);

@@ -5,13 +5,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 namespace RemoteControlServer.CommandExecuter
-{   
+{
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using Definitions;
-
+    using System.Windows.Forms;
+    using System.Runtime.InteropServices;
     public class WindowsCommandExecuter : AbstractCommandExecuter
     {
 
@@ -23,13 +24,36 @@ namespace RemoteControlServer.CommandExecuter
 
         public override void refreshClientStates(Client client)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override bool tryToExecuteCommand(Command command)
         {
-            throw new NotImplementedException();
+            if (command.getName() == "MK_MouseMove")
+            {
+                int x = Convert.ToInt32(command.getArguments()[0]);
+                int y = Convert.ToInt32(command.getArguments()[1]);
+                Cursor.Position = new System.Drawing.Point(Cursor.Position.X + x * 2, Cursor.Position.Y + y * 2);
+                return true;
+            }
+            else if (command.getName() == "MK_MouseLeftDown")
+            {
+                mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            }
+            else if (command.getName() == "MK_MouseLeftUp")
+            {
+                mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            }
+            return false;
         }
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+
+        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+        private const int MOUSEEVENTF_LEFTUP = 0x04;
+        private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+        private const int MOUSEEVENTF_RIGHTUP = 0x10;
     }
 }
 

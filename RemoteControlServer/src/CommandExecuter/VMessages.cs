@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace RemoteControlServer.CommandExecuter
 {
@@ -51,8 +52,8 @@ namespace RemoteControlServer.CommandExecuter
         public void sendKey(System.Windows.Forms.Keys pKey)
         {
             Win32.PostMessage(eClassHandle, Win32.WM_KEYDOWN, (IntPtr)Win32.VkKeyScan((char)pKey), (IntPtr)0x00140001);
-            Win32.PostMessage(eClassHandle, Win32.WM_CHAR, (IntPtr)(0x00000000 + (Int32)pKey), (IntPtr)0x00140001);
-            Win32.PostMessage(eClassHandle, Win32.WM_KEYUP, (IntPtr)Win32.VkKeyScan((char)pKey), (IntPtr)0xC0140001);
+            Thread.Sleep(10);
+            Win32.PostMessage(eClassHandle, Win32.WM_KEYUP, (IntPtr)Win32.VkKeyScan((char)pKey), (IntPtr)0x00140001);
         }
 
         public void sendChar(char pChar)

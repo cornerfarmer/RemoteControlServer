@@ -32,10 +32,13 @@ namespace RemoteControlServer.OutputHandler
 			set;
 		}
 
-        public OutputHandler(IOutputComposer outputComposer_, ICommandComposer commandComposer_)
+        private ILogger logger;
+
+        public OutputHandler(IOutputComposer outputComposer_, ICommandComposer commandComposer_, ILogger logger_)
         {
             outputComposer = outputComposer_;
             commandComposer = commandComposer_;
+            logger = logger_;
             buffer = new List<string>();
         }
 
@@ -48,6 +51,7 @@ namespace RemoteControlServer.OutputHandler
 
 		public virtual void addOutputCommand(Command command)
 		{
+            logger.log("Sended command: " + command);
             string commandString = commandComposer.compose(command);
             buffer.Add(commandString);
 		}
