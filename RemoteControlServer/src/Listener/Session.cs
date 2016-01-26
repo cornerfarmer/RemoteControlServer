@@ -36,12 +36,14 @@ namespace RemoteControlServer.Listener
         private TcpClient tcpClient;
         private Client client;
         private NetworkStream stream;
+        private ILogger logger;
 
-        public Session(TcpClient tcpClient_, IInputHandler inputHandler_, IOutputHandler outputHandler_)
+        public Session(TcpClient tcpClient_, IInputHandler inputHandler_, IOutputHandler outputHandler_, ILogger logger_)
         {
             tcpClient = tcpClient_;
             inputHandler = inputHandler_;
             outputHandler = outputHandler_;
+            logger = logger_;
             client = new Client();
         }
 
@@ -49,6 +51,7 @@ namespace RemoteControlServer.Listener
 		{
             initializeStream();
             communicate();
+            logger.log("Client has disconnected: " + tcpClient.Client.RemoteEndPoint);
             tcpClient.Close();
         }
 
@@ -59,12 +62,19 @@ namespace RemoteControlServer.Listener
 
         private void communicate()
         {
-            while(true)
+            try
             {
-                String received = recieveAllData();
-                inputHandler.handleInput(received, client);
-                String dataToSend = outputHandler.getBufferedOutput();
-                sendData(dataToSend);
+                while (true)
+                {
+                    String received = recieveAllData();
+                    inputHandler.handleInput(received, client);
+                    String dataToSend = outputHandler.getBufferedOutput();
+                    sendData(dataToSend);
+                }
+            }
+            catch (System.IO.IOException e)
+            {
+
             }
         }
 

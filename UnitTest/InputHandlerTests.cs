@@ -72,7 +72,8 @@ namespace UnitTest
                     return true;
                 }
             };
-            inputHandler = new InputHandler(fakeCommandParser, fakeInputParser, fakeCommandExecuters);
+
+            inputHandler = new InputHandler(fakeCommandParser, fakeInputParser, fakeCommandExecuters, new StubILogger());
         }
 
         [TestMethod]

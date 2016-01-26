@@ -13,6 +13,7 @@ namespace RemoteControlServer.CommandExecuter
     using Definitions;
     using System.Windows.Forms;
     using System.Runtime.InteropServices;
+    using WindowsInput;
     public class WindowsCommandExecuter : AbstractCommandExecuter
     {
 
@@ -43,6 +44,22 @@ namespace RemoteControlServer.CommandExecuter
             else if (command.getName() == "MK_MouseLeftUp")
             {
                 mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            }
+            else if (command.getName() == "MK_MouseRightDown")
+            {
+                mouse_event(MOUSEEVENTF_RIGHTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            }
+            else if (command.getName() == "MK_MouseRightUp")
+            {
+                mouse_event(MOUSEEVENTF_RIGHTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            }
+            else if (command.getName() == "MK_KeyDown")
+            {
+                InputSimulator.SimulateKeyDown((VirtualKeyCode)Convert.ToInt32(command.getArguments()[0]));
+            }
+            else if (command.getName() == "MK_KeyUp")
+            {
+                InputSimulator.SimulateKeyUp((VirtualKeyCode)Convert.ToInt32(command.getArguments()[0]));
             }
             return false;
         }

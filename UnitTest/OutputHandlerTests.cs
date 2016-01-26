@@ -42,7 +42,7 @@ namespace UnitTest
                 }
             };
 
-            outputHandler = new OutputHandler(fakeOutputComposer, fakeCommandComposer);
+            outputHandler = new OutputHandler(fakeOutputComposer, fakeCommandComposer, new StubILogger());
         }
 
         [TestMethod]

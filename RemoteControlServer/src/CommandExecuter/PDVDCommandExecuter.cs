@@ -32,6 +32,13 @@ namespace RemoteControlServer.CommandExecuter
                 client.setState("PDVD_Open", pdvdOpen);
                 outputHandler.addOutputCommand(new Command("PDVD_Open", new string[] { pdvdOpen }));
             }
+
+            string pdvdVol = ((int)(AudioController.getMasterVolume() * 100)).ToString();
+            if (pdvdVol != client.getState("PDVD_Vol"))
+            {
+                client.setState("PDVD_Vol", pdvdVol);
+                outputHandler.addOutputCommand(new Command("PDVD_Vol", new string[] { pdvdVol }));
+            }
         }
 
         public override Boolean tryToExecuteCommand(Command command)
@@ -47,7 +54,7 @@ namespace RemoteControlServer.CommandExecuter
             }
             else if (command.getName() == "PDVD_Vol")
             {
-                AudioController.setMasterVolume(Convert.ToInt32(command.getArguments()[0]));
+                AudioController.setMasterVolume(Convert.ToInt32(command.getArguments()[0]) / 100.0f);
                 return true;
             }
 

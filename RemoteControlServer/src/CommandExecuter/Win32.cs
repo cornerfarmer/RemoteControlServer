@@ -24,15 +24,15 @@ namespace RemoteControlServer.CommandExecuter
         public const int WS_EX_APPWINDOW = 0x00040000;
 
         [DllImport("User32.dll")]
-        public static extern int FindWindow(string strClassName, string strWindowName);
+        public static extern IntPtr FindWindow(string strClassName, string strWindowName);
 
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        public static extern int FindWindowEx(int parentHandle, IntPtr childAfter, string lclassName, string windowTitle);
+        public static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string lclassName, string windowTitle);
 
 
         [DllImport("user32.dll")]
-        public static extern bool PostMessage(int hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+        public static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, uint lParam);
 
 
         [DllImport("User32.dll")]
@@ -49,5 +49,11 @@ namespace RemoteControlServer.CommandExecuter
 
         [DllImport("user32.dll")]
         public static extern byte VkKeyScan(char ch);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetFocus();
     }
 }
