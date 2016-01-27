@@ -25,7 +25,7 @@ namespace RemoteControlServer.CommandExecuter
 
         public override void refreshClientStates(Client client)
         {
-            messages = new VMessages("PowerDVD");
+            messages = new VMessages("CyberLink PowerDVD 12.0", "PowerDVD");
             string pdvdOpen = messages.windowExists() ? "1" : "0";
             if (pdvdOpen != client.getState("PDVD_Open"))
             {
@@ -38,6 +38,13 @@ namespace RemoteControlServer.CommandExecuter
             {
                 client.setState("PDVD_Vol", pdvdVol);
                 outputHandler.addOutputCommand(new Command("PDVD_Vol", new string[] { pdvdVol }));
+            }
+
+            string pdvdMute = AudioController.getMute() ? "1" : "0";
+            if (pdvdMute != client.getState("PDVD_Mute"))
+            {
+                client.setState("PDVD_Mute", pdvdMute);
+                outputHandler.addOutputCommand(new Command("PDVD_Mute", new string[] { pdvdMute }));
             }
         }
 
@@ -57,7 +64,56 @@ namespace RemoteControlServer.CommandExecuter
                 AudioController.setMasterVolume(Convert.ToInt32(command.getArguments()[0]) / 100.0f);
                 return true;
             }
-
+            else if (command.getName() == "PDVD_Vol")
+            {
+                AudioController.setMasterVolume(Convert.ToInt32(command.getArguments()[0]) / 100.0f);
+                return true;
+            }
+            else if (command.getName() == "PDVD_SwitchMute")
+            {
+                AudioController.switchMute();
+                return true;
+            }
+            else if (command.getName() == "PDVD_Left")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.Left);
+                return true;
+            }
+            else if (command.getName() == "PDVD_Up")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.Up);
+                return true;
+            }
+            else if (command.getName() == "PDVD_Down")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.Down);
+                return true;
+            }
+            else if (command.getName() == "PDVD_Right")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.Right);
+                return true;
+            }
+            else if (command.getName() == "PDVD_OK")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.Enter);
+                return true;
+            }
+            else if (command.getName() == "PDVD_Menu")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.L);
+                return true;
+            }
+            else if (command.getName() == "PDVD_Next")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.N);
+                return true;
+            }
+            else if (command.getName() == "PDVD_Prev")
+            {
+                messages.sendKey(System.Windows.Forms.Keys.P);
+                return true;
+            }
             return false;
         }
 

@@ -10,23 +10,16 @@ namespace RemoteControlServer.CommandExecuter
 {
     class VMessages
     {
-        string[] eWindowClassStructure;
         IntPtr eClassHandle;
 
-        public VMessages(string pWindowClassStructure = "")
+        public VMessages(string windowDescription = "", string parentWindowDescription = "")
         {
-            if (pWindowClassStructure != "")
+            if (windowDescription != "")
             {
-                eWindowClassStructure = pWindowClassStructure.Split(new string[] { "//" }, StringSplitOptions.None);
-                eClassHandle = Win32.FindWindow(null, eWindowClassStructure[0]);
-                if (eWindowClassStructure.Count() > 1)
-                {
-                    for (int i = 1; i < eWindowClassStructure.Count(); i++)
-                    {
-                        eClassHandle = Win32.FindWindowEx(eClassHandle, IntPtr.Zero, eWindowClassStructure[i], null);
-                    }
-
-                }
+                if (parentWindowDescription == "")
+                    eClassHandle = Win32.FindWindow(null, windowDescription);
+                else
+                    eClassHandle = Win32.FindWindowEx(Win32.FindWindow(null, parentWindowDescription), (IntPtr)null, null, windowDescription);
             }
             else
             {
@@ -55,12 +48,12 @@ namespace RemoteControlServer.CommandExecuter
 
         public void keyDown(System.Windows.Forms.Keys pKey)
         {
-            Win32.PostMessage(eClassHandle, Win32.WM_KEYDOWN, Win32.VkKeyScan((char)pKey), 0x00140001);
+            Win32.PostMessage(eClassHandle, Win32.WM_KEYDOWN, (int)pKey, 0x00140001);
         }
 
         public void keyUp(System.Windows.Forms.Keys pKey)
         {
-            Win32.PostMessage(eClassHandle, Win32.WM_KEYUP, Win32.VkKeyScan((char)pKey), 0xC0000001);
+            Win32.PostMessage(eClassHandle, Win32.WM_KEYUP, (int)pKey, 0xC0000001);
         }
         
 

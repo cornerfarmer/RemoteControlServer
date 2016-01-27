@@ -25,6 +25,19 @@ namespace RemoteControlServer.CommandExecuter
             return defaultDevice.AudioEndpointVolume.MasterVolumeLevelScalar;
         }
 
+        public static void switchMute()
+        {
+            MMDeviceEnumerator devEnum = new MMDeviceEnumerator();
+            MMDevice defaultDevice = devEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            defaultDevice.AudioEndpointVolume.Mute = !defaultDevice.AudioEndpointVolume.Mute;
+        }
+
+        public static bool getMute()
+        {
+            MMDeviceEnumerator devEnum = new MMDeviceEnumerator();
+            MMDevice defaultDevice = devEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            return defaultDevice.AudioEndpointVolume.Mute;
+        }
 
     }
 
