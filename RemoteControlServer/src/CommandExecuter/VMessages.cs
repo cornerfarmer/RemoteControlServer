@@ -19,7 +19,11 @@ namespace RemoteControlServer.CommandExecuter
                 if (parentWindowDescription == "")
                     eClassHandle = Win32.FindWindow(null, windowDescription);
                 else
+                {
                     eClassHandle = Win32.FindWindowEx(Win32.FindWindow(null, parentWindowDescription), (IntPtr)null, null, windowDescription);
+                    if (eClassHandle.ToInt32() == 0)
+                        eClassHandle = Win32.FindWindow(null, windowDescription);
+                }
             }
             else
             {
