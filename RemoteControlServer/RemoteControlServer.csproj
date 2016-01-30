@@ -76,6 +76,9 @@
     <Compile Include="src\ClientService\ClientService.cs" />
     <Compile Include="src\CommandExecuter\AbstractCommandExecuter.cs" />
     <Compile Include="src\CommandExecuter\AudioController.cs" />
+    <Compile Include="src\CommandExecuter\CommandExecuter.cs" />
+    <Compile Include="src\CommandExecuter\CommandRegistration.cs" />
+    <Compile Include="src\CommandExecuter\ICommandTarget.cs" />
     <Compile Include="src\CommandExecuter\PDVDCommandExecuter.cs" />
     <Compile Include="src\CommandExecuter\VMessages.cs" />
     <Compile Include="src\CommandExecuter\Win32.cs" />
