@@ -14,54 +14,53 @@ namespace RemoteControlServer.CommandExecuter
     using System.Windows.Forms;
     using System.Runtime.InteropServices;
     using WindowsInput;
-    public class WindowsCommandExecuter : AbstractCommandExecuter
+    public class Windows : ICommandTarget
     {
-
-        public WindowsCommandExecuter(IOutputHandler outputHandler_)
-            : base(outputHandler_)
+        public void refreshClientStates(Client client)
         {
 
         }
 
-        public override void refreshClientStates(Client client)
+        [CommandRegistration("MK_MouseMove")]
+        public void mouseMove(int dx, int dy)
         {
-            
+            Cursor.Position = new System.Drawing.Point(Cursor.Position.X + dx * 2, Cursor.Position.Y + dy * 2);
         }
 
-        public override bool tryToExecuteCommand(Command command)
+        [CommandRegistration("MK_MouseLeftDown")]
+        public void mouseLeftDown()
         {
-            if (command.getName() == "MK_MouseMove")
-            {
-                int x = Convert.ToInt32(command.getArguments()[0]);
-                int y = Convert.ToInt32(command.getArguments()[1]);
-                Cursor.Position = new System.Drawing.Point(Cursor.Position.X + x * 2, Cursor.Position.Y + y * 2);
-                return true;
-            }
-            else if (command.getName() == "MK_MouseLeftDown")
-            {
-                mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            }
-            else if (command.getName() == "MK_MouseLeftUp")
-            {
-                mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            }
-            else if (command.getName() == "MK_MouseRightDown")
-            {
-                mouse_event(MOUSEEVENTF_RIGHTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            }
-            else if (command.getName() == "MK_MouseRightUp")
-            {
-                mouse_event(MOUSEEVENTF_RIGHTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
-            }
-            else if (command.getName() == "MK_KeyDown")
-            {
-                InputSimulator.SimulateKeyDown((VirtualKeyCode)Convert.ToInt32(command.getArguments()[0]));
-            }
-            else if (command.getName() == "MK_KeyUp")
-            {
-                InputSimulator.SimulateKeyUp((VirtualKeyCode)Convert.ToInt32(command.getArguments()[0]));
-            }
-            return false;
+            mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+        }
+
+        [CommandRegistration("MK_MouseLeftUp")]
+        public void mouseLeftUp()
+        {
+            mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+        }
+
+        [CommandRegistration("MK_MouseRightDown")]
+        public void mouseRightDown()
+        {
+            mouse_event(MOUSEEVENTF_RIGHTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+        }
+
+        [CommandRegistration("MK_MouseRightUp")]
+        public void mouseRightUp()
+        {
+            mouse_event(MOUSEEVENTF_RIGHTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+        }
+
+        [CommandRegistration("MK_KeyDown")]
+        public void keyDown(int keyCode)
+        {
+            InputSimulator.SimulateKeyDown((VirtualKeyCode)keyCode);
+        }
+
+        [CommandRegistration("MK_KeyUp")]
+        public void keyUp(int keyCode)
+        {
+            InputSimulator.SimulateKeyUp((VirtualKeyCode)keyCode);
         }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]

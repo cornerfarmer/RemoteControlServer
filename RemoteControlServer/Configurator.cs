@@ -23,9 +23,10 @@ namespace RemoteControlServer
             this.Bind<ILogger>().To<ConsoleLogger.ConsoleLogger>().InSingletonScope();
             this.Bind<IOutputComposer>().To<Composer.OutputComposer>().InSingletonScope();
             this.Bind<IOutputHandler>().To<OutputHandler.OutputHandler>().InSingletonScope();
+            this.Bind<ICommandExecuter>().To<CommandExecuter.CommandExecuter>().InSingletonScope();
 
-            this.Bind<ICommandExecuter>().To<CommandExecuter.PDVDCommandExecuter>().InSingletonScope();
-            this.Bind<ICommandExecuter>().To<CommandExecuter.WindowsCommandExecuter>().InSingletonScope();
+            this.Bind<ICommandTarget>().To<CommandExecuter.PowerDVD>().InSingletonScope();
+            this.Bind<ICommandTarget>().To<CommandExecuter.Windows>().InSingletonScope();
 
         }
     }

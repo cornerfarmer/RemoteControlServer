@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RemoteControlServer.CommandExecuter
+namespace RemoteControlServer.Definitions
 {
     public interface ICommandTarget
     {
+        void refreshClientStates(Client client);
     }
 }

@@ -12,18 +12,18 @@ namespace RemoteControlServer.CommandExecuter
     using System.Text;
     using Definitions;
     using System.Diagnostics;
-    public class PDVDCommandExecuter : AbstractCommandExecuter
+    public class PowerDVD : ICommandTarget
 	{
         private const string PLAY_COMMAND = "PDVD_PLAY";
         private VMessages messages;
+        protected IOutputHandler outputHandler;
 
-        public PDVDCommandExecuter(IOutputHandler outputHandler_)
-            : base(outputHandler_)
+        public PowerDVD(IOutputHandler outputHandler_)
         {
-            
+            outputHandler = outputHandler_;
         }
 
-        public override void refreshClientStates(Client client)
+        public void refreshClientStates(Client client)
         {
             messages = new VMessages("CyberLink PowerDVD 12.0", "PowerDVD");
             string pdvdOpen = messages.windowExists() ? "1" : "0";
@@ -48,74 +48,79 @@ namespace RemoteControlServer.CommandExecuter
             }
         }
 
-        public override Boolean tryToExecuteCommand(Command command)
+
+        [CommandRegistration("PDVD_Open")]
+        public void open()
         {
-            if (command.getName() == "PDVD_Open")
-            {
-                Process.Start("C:\\Program Files (x86)\\CyberLink\\PowerDVD12\\PDVDLaunchPolicy.exe");
-            }
-            else if (command.getName() == "PDVD_PlayPause")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.Space);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Vol")
-            {
-                AudioController.setMasterVolume(Convert.ToInt32(command.getArguments()[0]) / 100.0f);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Vol")
-            {
-                AudioController.setMasterVolume(Convert.ToInt32(command.getArguments()[0]) / 100.0f);
-                return true;
-            }
-            else if (command.getName() == "PDVD_SwitchMute")
-            {
-                AudioController.switchMute();
-                return true;
-            }
-            else if (command.getName() == "PDVD_Left")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.Left);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Up")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.Up);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Down")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.Down);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Right")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.Right);
-                return true;
-            }
-            else if (command.getName() == "PDVD_OK")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.Enter);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Menu")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.L);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Next")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.N);
-                return true;
-            }
-            else if (command.getName() == "PDVD_Prev")
-            {
-                messages.sendKey(System.Windows.Forms.Keys.P);
-                return true;
-            }
-            return false;
+            Process.Start("C:\\Program Files (x86)\\CyberLink\\PowerDVD12\\PDVDLaunchPolicy.exe");
         }
+
+        [CommandRegistration("PDVD_PlayPause")]
+        public void playPause()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.Space);
+        }
+
+        [CommandRegistration("PDVD_Vol")]
+        public void setVol(int newVolume)
+        {
+            AudioController.setMasterVolume(newVolume / 100.0f);
+        }
+
+        [CommandRegistration("PDVD_SwitchMute")]
+        public void switchMute()
+        {
+            AudioController.switchMute();
+        }
+
+        [CommandRegistration("PDVD_Left")]
+        public void left()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.Left);
+        }
+
+        [CommandRegistration("PDVD_Up")]
+        public void up()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.Up);
+        }
+
+        [CommandRegistration("PDVD_Down")]
+        public void down()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.Down);
+        }
+
+        [CommandRegistration("PDVD_Right")]
+        public void right()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.Right);
+        }
+
+        [CommandRegistration("PDVD_OK")]
+        public void ok()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.Enter);
+        }
+
+        [CommandRegistration("PDVD_Menu")]
+        public void menu()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.L);
+        }
+
+        [CommandRegistration("PDVD_Next")]
+        public void next()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.N);
+        }
+
+        [CommandRegistration("PDVD_Next")]
+        public void prev()
+        {
+            messages.sendKey(System.Windows.Forms.Keys.P);
+        }
+       
 
     }
 }

@@ -23,7 +23,10 @@ namespace RemoteControlServer.CommandExecuter
 
         public void refreshClientStates(Client client)
         {
-            
+            foreach (ICommandTarget target in targets)
+            {
+                target.refreshClientStates(client);
+            }
         }
 
         private void collectTargetMethods()

@@ -31,5 +31,10 @@ namespace UnitTest
             arg2 = arg2_;
             arg3 = arg3_;
         }
+
+        public void refreshClientStates(Client client)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

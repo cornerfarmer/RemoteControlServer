@@ -79,7 +79,7 @@
     <Compile Include="src\CommandExecuter\CommandExecuter.cs" />
     <Compile Include="src\CommandExecuter\CommandRegistration.cs" />
     <Compile Include="src\CommandExecuter\CommandTargetEntry.cs" />
-    <Compile Include="src\CommandExecuter\ICommandTarget.cs" />
+    <Compile Include="src\Definitions\ICommandTarget.cs" />
     <Compile Include="src\CommandExecuter\PDVDCommandExecuter.cs" />
     <Compile Include="src\CommandExecuter\VMessages.cs" />
     <Compile Include="src\CommandExecuter\Win32.cs" />
