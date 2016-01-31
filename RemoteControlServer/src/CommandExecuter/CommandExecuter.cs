@@ -8,13 +8,17 @@ using System.Reflection;
 
 namespace RemoteControlServer.CommandExecuter
 {
+
+   
     public class CommandExecuter : ICommandExecuter
     {
         ICommandTarget[] targets;
+        List<CommandTargetEntry> targetMethods;
 
         public CommandExecuter(ICommandTarget[] targets_)
         {
             targets = targets_;
+            collectTargetMethods();
         }
 
         public void refreshClientStates(Client client)
@@ -22,9 +26,9 @@ namespace RemoteControlServer.CommandExecuter
             
         }
 
-        public bool tryToExecuteCommand(Command command)
+        private void collectTargetMethods()
         {
-
+            targetMethods = new List<CommandTargetEntry>();
             foreach (ICommandTarget target in targets)
             {
                 Type type = target.GetType();
@@ -32,10 +36,21 @@ namespace RemoteControlServer.CommandExecuter
 
                 foreach (MethodInfo method in methods)
                 {
-                    method.Invoke(target, new object[] { command });
+                    targetMethods.Add(new CommandTargetEntry(target, method, (CommandRegistration)method.GetCustomAttribute(typeof(CommandRegistration))));
                 }
             }
-            
+        }
+
+        public bool tryToExecuteCommand(Command command)
+        {
+            foreach (CommandTargetEntry entry in targetMethods)
+            {
+                if (entry.matchesCommand(command))
+                {
+                    entry.execute(command);
+                }
+            }
+
             return true; 
         }
     }

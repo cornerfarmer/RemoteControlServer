@@ -10,13 +10,26 @@ namespace UnitTest
 {
     class TestCommandTarget : ICommandTarget
     {
-        public Command executedCommand;
+        public bool executed;
+        public bool executedArgs;
+        public string arg1;
+        public int arg2;
+        public bool arg3;
 
         [CommandRegistration("TestCommand")]
-        public void doSomething(Command commandToExecute)
+        public void doSomething()
         {
-            executedCommand = commandToExecute;
+            executed = true;
 
+        }
+
+        [CommandRegistration("TestCommandArgs")]
+        public void doSomething2(string arg1_, int arg2_, bool arg3_)
+        {
+            executedArgs = true;
+            arg1 = arg1_;
+            arg2 = arg2_;
+            arg3 = arg3_;
         }
     }
 }

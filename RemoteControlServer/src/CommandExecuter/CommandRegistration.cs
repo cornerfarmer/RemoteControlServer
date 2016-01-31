@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RemoteControlServer.Definitions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,16 +10,17 @@ namespace RemoteControlServer.CommandExecuter
     [System.AttributeUsage(System.AttributeTargets.Method)]
     public class CommandRegistration : System.Attribute
     {
-        private string command;
+        private string commandString;
 
-        public CommandRegistration(string command_)
+        public CommandRegistration(string commandString_)
         {
-            this.command = command_;
+            commandString = commandString_;
         }
         
-        public string getCommand()
+        public string getCommandString()
         {
-            return command;
+            return commandString;
         }
+        
     }
 }
