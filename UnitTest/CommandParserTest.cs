@@ -93,18 +93,11 @@ namespace UnitTest
 
 
         [TestMethod]
-        public void CommandParser_EmptyCommandArguments_ExceptionThrown()
+        public void CommandParser_EmptyCommandArguments_CorrectCommandObject()
         {
-            try
-            {
-                Command command = commandParser.parseCommand("Name|");
-            }
-            catch (ArgumentException e)
-            {
-                StringAssert.Contains(e.Message, "Name|");
-                return;
-            }
-            Assert.Fail("No exception thrown");
+            Command command = commandParser.parseCommand("Name|");
+            Assert.AreEqual(command.getName(), "Name");
+            Assert.AreEqual(command.getArguments().Length, 0);
         }
 
 

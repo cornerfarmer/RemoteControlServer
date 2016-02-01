@@ -30,7 +30,7 @@ namespace RemoteControlServer.Parser
 
         private string validateInputTermination(string input)
         {
-            if (input.Last<char>() != ';')
+            if (input.Length == 0 || input.Last<char>() != ';')
                 throw new ArgumentException("The given input '" + input + "' does not terminate correctly!");
             return input.Substring(0, input.Length - 1);
         }

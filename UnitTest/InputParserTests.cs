@@ -17,10 +17,18 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void InputParser_EmptyInput_EmptyList()
+        public void InputParser_EmptyInput_ExceptionThrown()
         {
-            List<string> commandString = inputParser.parse("");
-            Assert.AreEqual(commandString.Count, 0);
+            try
+            {
+                List<string> commandString = inputParser.parse("");
+            }
+            catch (ArgumentException e)
+            {
+                StringAssert.Contains(e.Message, "does not terminate correctly");
+                return;
+            }
+            Assert.Fail("No exception thrown");
         }
 
         [TestMethod]
@@ -33,7 +41,7 @@ namespace UnitTest
         [TestMethod]
         public void InputParser_OneInputCommand_OneCommandString()
         {
-            List<string> commandString = inputParser.parse("TESTCOMMAND;");
+            List<string> commandString = inputParser.parse("TESTCOMMAND,;");
             Assert.AreEqual(commandString.Count, 1);
             Assert.AreEqual(commandString[0], "TESTCOMMAND");
         }
@@ -41,7 +49,7 @@ namespace UnitTest
         [TestMethod]
         public void InputParser_MultipleInputCommands_MultipleCommandStrings()
         {
-            List<string> commandString = inputParser.parse("FirstCommand;SecondCommand|2:1;ThirdCommand;");
+            List<string> commandString = inputParser.parse("FirstCommand,SecondCommand|2:1,ThirdCommand,;");
             Assert.AreEqual(commandString.Count, 3);
             Assert.AreEqual(commandString[0], "FirstCommand");
             Assert.AreEqual(commandString[1], "SecondCommand|2:1");
