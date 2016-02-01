@@ -4,7 +4,7 @@
 //     Wenn der Code neu generiert wird, gehen alle Änderungen an dieser Datei verloren
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace RemoteControlServer.CommandExecuter
+namespace RemoteControlServer.CommandTarget
 {
     using System;
     using System.Collections.Generic;

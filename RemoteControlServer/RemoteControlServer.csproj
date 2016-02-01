@@ -74,16 +74,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\ClientRepository\ClientRepository.cs" />
     <Compile Include="src\ClientService\ClientService.cs" />
-    <Compile Include="src\CommandExecuter\AbstractCommandExecuter.cs" />
-    <Compile Include="src\CommandExecuter\AudioController.cs" />
+    <Compile Include="src\CommandTarget\AudioController.cs" />
     <Compile Include="src\CommandExecuter\CommandExecuter.cs" />
-    <Compile Include="src\CommandExecuter\CommandRegistration.cs" />
+    <Compile Include="src\Definitions\CommandRegistration.cs" />
     <Compile Include="src\CommandExecuter\CommandTargetEntry.cs" />
     <Compile Include="src\Definitions\ICommandTarget.cs" />
-    <Compile Include="src\CommandExecuter\PDVDCommandExecuter.cs" />
-    <Compile Include="src\CommandExecuter\VMessages.cs" />
-    <Compile Include="src\CommandExecuter\Win32.cs" />
-    <Compile Include="src\CommandExecuter\WindowsCommandExecuter.cs" />
+    <Compile Include="src\CommandTarget\PDVDCommandExecuter.cs" />
+    <Compile Include="src\CommandTarget\VMessages.cs" />
+    <Compile Include="src\CommandTarget\Win32.cs" />
+    <Compile Include="src\CommandTarget\WindowsCommandExecuter.cs" />
     <Compile Include="src\Definitions\Command.cs" />
     <Compile Include="src\Composer\CommandComposer.cs" />
     <Compile Include="src\Composer\OutputComposer.cs" />
@@ -98,7 +97,9 @@
     <Compile Include="src\Definitions\ILogger.cs" />
     <Compile Include="src\Definitions\IOutputComposer.cs" />
     <Compile Include="src\Definitions\IOutputHandler.cs" />
-    <Compile Include="src\GUI\Window.cs" />
+    <Compile Include="src\GUI\Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\InputHandler\InputHandler.cs" />
     <Compile Include="src\Definitions\Client.cs" />
     <Compile Include="src\Listener\Listener.cs" />
@@ -121,6 +122,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="src\GUI\Window.resx">
+      <DependentUpon>Window.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

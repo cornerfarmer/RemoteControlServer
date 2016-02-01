@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RemoteControlServer.CommandExecuter
+namespace RemoteControlServer.Definitions
 {
     [System.AttributeUsage(System.AttributeTargets.Method)]
     public class CommandRegistration : System.Attribute

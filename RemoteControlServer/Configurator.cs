@@ -25,9 +25,8 @@ namespace RemoteControlServer
             this.Bind<IOutputHandler>().To<OutputHandler.OutputHandler>().InSingletonScope();
             this.Bind<ICommandExecuter>().To<CommandExecuter.CommandExecuter>().InSingletonScope();
 
-            this.Bind<ICommandTarget>().To<CommandExecuter.PowerDVD>().InSingletonScope();
-            this.Bind<ICommandTarget>().To<CommandExecuter.Windows>().InSingletonScope();
-
+            this.Bind<ICommandTarget>().To<CommandTarget.PowerDVD>().InSingletonScope();
+            this.Bind<ICommandTarget>().To<CommandTarget.Windows>().InSingletonScope();
         }
     }
 }

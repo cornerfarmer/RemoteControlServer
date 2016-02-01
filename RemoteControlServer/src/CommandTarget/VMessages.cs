@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace RemoteControlServer.CommandExecuter
+namespace RemoteControlServer.CommandTarget
 {
     class VMessages
     {
