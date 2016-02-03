@@ -16,10 +16,6 @@ namespace RemoteControlServer.CommandTarget
     using WindowsInput;
     public class Windows : ICommandTarget
     {
-        public void refreshClientStates(Client client)
-        {
-
-        }
 
         [CommandRegistration("MK_MouseMove")]
         public void mouseMove(int dx, int dy)

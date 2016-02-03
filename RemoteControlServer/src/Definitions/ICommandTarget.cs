@@ -8,6 +8,6 @@ namespace RemoteControlServer.Definitions
 {
     public interface ICommandTarget
     {
-        void refreshClientStates(Client client);
+
     }
 }

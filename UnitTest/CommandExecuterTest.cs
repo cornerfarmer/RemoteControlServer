@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RemoteControlServer.CommandExecuter;
 using System.Collections.Generic;
 using RemoteControlServer.Definitions;
+using RemoteControlServer.Definitions.Fakes;
 
 namespace UnitTest
 {
@@ -11,12 +12,21 @@ namespace UnitTest
     {
         CommandExecuter commandExecuter;
         TestCommandTarget target;
+        Command executedCommand;
 
         [TestInitialize()]
         public void Initialize()
         {
             target = new TestCommandTarget();
-            commandExecuter = new CommandExecuter(new ICommandTarget[] { target });
+            IOutputHandler fakeOutputHandler = new StubIOutputHandler()
+            {
+                AddOutputCommandCommand = (command) =>
+                {
+                    executedCommand = command;
+                }
+            };
+            commandExecuter = new CommandExecuter(new ICommandTarget[] { target }, fakeOutputHandler);
+            
         }
 
         [TestMethod]
@@ -70,5 +80,28 @@ namespace UnitTest
             Assert.AreEqual(target.executedArgs, false);
             Assert.AreEqual(target.executed, false);
         }
+
+        [TestMethod]
+        public void CommandExecuter_NewStatus_CorrectOutputCommand()
+        {
+            Client client = new Client();
+            commandExecuter.refreshClientStates(client);
+            Assert.AreNotEqual(executedCommand, null);
+            Assert.AreEqual(executedCommand.getName(), "TestStatus");
+            Assert.AreEqual(executedCommand.getArguments().Length, 1);
+            Assert.AreEqual(executedCommand.getArguments()[0], "42");
+        }
+
+        [TestMethod]
+        public void CommandExecuter_SameStatus_NoOutputCommand()
+        {
+            Client client = new Client();
+            client.setState("TestStatus", "42");
+            commandExecuter.refreshClientStates(client);
+            Assert.AreEqual(executedCommand, null);
+        }
+
+
+
     }
 }

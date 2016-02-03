@@ -14,40 +14,26 @@ namespace RemoteControlServer.CommandTarget
     using System.Diagnostics;
     public class PowerDVD : ICommandTarget
 	{
-        private const string PLAY_COMMAND = "PDVD_PLAY";
         private VMessages messages;
-        protected IOutputHandler outputHandler;
-
-        public PowerDVD(IOutputHandler outputHandler_)
-        {
-            outputHandler = outputHandler_;
-        }
-
-        public void refreshClientStates(Client client)
+        
+        [StatusRegistration("PDVD_Open")]
+        public string isOpen()
         {
             messages = new VMessages("CyberLink PowerDVD 12.0", "PowerDVD");
-            string pdvdOpen = messages.windowExists() ? "1" : "0";
-            if (pdvdOpen != client.getState("PDVD_Open"))
-            {
-                client.setState("PDVD_Open", pdvdOpen);
-                outputHandler.addOutputCommand(new Command("PDVD_Open", new string[] { pdvdOpen }));
-            }
-
-            string pdvdVol = ((int)(AudioController.getMasterVolume() * 100)).ToString();
-            if (pdvdVol != client.getState("PDVD_Vol"))
-            {
-                client.setState("PDVD_Vol", pdvdVol);
-                outputHandler.addOutputCommand(new Command("PDVD_Vol", new string[] { pdvdVol }));
-            }
-
-            string pdvdMute = AudioController.getMute() ? "1" : "0";
-            if (pdvdMute != client.getState("PDVD_Mute"))
-            {
-                client.setState("PDVD_Mute", pdvdMute);
-                outputHandler.addOutputCommand(new Command("PDVD_Mute", new string[] { pdvdMute }));
-            }
+            return messages.windowExists() ? "1" : "0";
         }
 
+        [StatusRegistration("PDVD_Vol")]
+        public int getCurrentVolume()
+        {
+            return (int)(AudioController.getMasterVolume() * 100);
+        }
+
+        [StatusRegistration("PDVD_Mute")]
+        public string isMuted()
+        {
+            return AudioController.getMute() ? "1" : "0";
+        }
 
         [CommandRegistration("PDVD_Open")]
         public void open()

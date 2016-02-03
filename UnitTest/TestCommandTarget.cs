@@ -32,6 +32,13 @@ namespace UnitTest
             arg3 = arg3_;
         }
 
+
+        [StatusRegistration("TestStatus")]
+        public int getStatus()
+        {
+            return 42;
+        }
+
         public void refreshClientStates(Client client)
         {
             throw new NotImplementedException();
