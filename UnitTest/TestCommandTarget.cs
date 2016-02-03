@@ -43,5 +43,10 @@ namespace UnitTest
         {
             throw new NotImplementedException();
         }
+
+        public string getTargetPrefix()
+        {
+            return "TEST";
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace RemoteControlServer.Parser
 	{
         private string[] commandParts;
         private string commandString;
+        private string commandTitle;
 
         public virtual Command parseCommand(string commandString_)
 		{
@@ -43,7 +44,26 @@ namespace RemoteControlServer.Parser
         private Command parseCommandWithArguments()
         {
             computeCommandParts();
-            return new Command(getNameOfCommandWithArguments(), getArgumentsOfCommandWithArguments());
+            commandTitle = getNameOfCommandWithArguments();
+            return new Command(getAppName(), getCommandName(), getArgumentsOfCommandWithArguments());
+        }
+
+        public string getAppName()
+        {
+            if (!commandTitle.Contains("_"))
+            {
+                throw new ArgumentException("The command title '" + commandTitle + "' does not contain any app name.");
+            }
+            return commandTitle.Substring(0, commandTitle.IndexOf("_"));
+        }
+
+        public string getCommandName()
+        {
+            if (!commandTitle.Contains("_"))
+            {
+                throw new ArgumentException("The command title '" + commandTitle + "' does not contain any command name.");
+            }
+            return commandTitle.Substring(commandTitle.IndexOf("_") + 1);
         }
 
         private void computeCommandParts()
@@ -63,6 +83,7 @@ namespace RemoteControlServer.Parser
             }
             return commandParts[0];
         }
+        
 
         private string[] getArgumentsOfCommandWithArguments()
         {
@@ -94,7 +115,8 @@ namespace RemoteControlServer.Parser
 
         private Command parseCommandWithoutArguments()
         {
-            return new Command(commandString);
+            commandTitle = commandString;
+            return new Command(getAppName(), getCommandName());
         }
 	}
 }

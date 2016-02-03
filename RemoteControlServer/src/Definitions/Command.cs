@@ -14,23 +14,26 @@ namespace RemoteControlServer.Definitions
     public class Command
     {
         private string name;
-
+        private string appName;
         private string[] arguments;
 
         public Command()
         {
+            appName = "";
             name = "";
             arguments = new string[0];
         }
 
-        public Command(string name_)
+        public Command(string appName_, string name_)
         {
+            appName = appName_;
             name = name_;
             arguments = new string[0];
         }
 
-        public Command(string name_, string[] arguments_)
+        public Command(string appName_, string name_, string[] arguments_)
         {
+            appName = appName_;
             name = name_;
             arguments = arguments_;
         }
@@ -38,6 +41,10 @@ namespace RemoteControlServer.Definitions
         public string getName()
         {
             return name;
+        }
+        public string getAppName()
+        {
+            return appName;
         }
 
         public string[] getArguments()
@@ -52,7 +59,7 @@ namespace RemoteControlServer.Definitions
 
         public override string ToString()
         {
-            return name + "(" + string.Join(".", arguments)  + ")";
+            return appName + "_" + name + "(" + string.Join(".", arguments)  + ")";
         }
 
     }

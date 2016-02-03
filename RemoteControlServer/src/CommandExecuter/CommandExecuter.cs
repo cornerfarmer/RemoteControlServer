@@ -29,11 +29,11 @@ namespace RemoteControlServer.CommandExecuter
             foreach (StatusTargetEntry entry in statusMethods)
             {
                 string newStatus = entry.execute().ToString();
-                string oldStatus = client.getState(entry.getStatusName());
+                string oldStatus = client.getState(entry.getAppName() + "_" + entry.getStatusName());
                 if (newStatus != oldStatus)
                 {
-                    client.setState(entry.getStatusName(), newStatus);
-                    outputHandler.addOutputCommand(new Command(entry.getStatusName(), new string[] { newStatus }));
+                    client.setState(entry.getAppName() + "_" + entry.getStatusName(), newStatus);
+                    outputHandler.addOutputCommand(new Command(entry.getAppName(), entry.getStatusName(), new string[] { newStatus }));
                 }
             }
         }

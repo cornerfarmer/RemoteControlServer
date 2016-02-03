@@ -17,46 +17,51 @@ namespace RemoteControlServer.CommandTarget
     public class Windows : ICommandTarget
     {
 
-        [CommandRegistration("MK_MouseMove")]
+        [CommandRegistration("MouseMove")]
         public void mouseMove(int dx, int dy)
         {
             Cursor.Position = new System.Drawing.Point(Cursor.Position.X + dx * 2, Cursor.Position.Y + dy * 2);
         }
 
-        [CommandRegistration("MK_MouseLeftDown")]
+        [CommandRegistration("MouseLeftDown")]
         public void mouseLeftDown()
         {
             mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
         }
 
-        [CommandRegistration("MK_MouseLeftUp")]
+        [CommandRegistration("MouseLeftUp")]
         public void mouseLeftUp()
         {
             mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
         }
 
-        [CommandRegistration("MK_MouseRightDown")]
+        [CommandRegistration("MouseRightDown")]
         public void mouseRightDown()
         {
             mouse_event(MOUSEEVENTF_RIGHTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
         }
 
-        [CommandRegistration("MK_MouseRightUp")]
+        [CommandRegistration("MouseRightUp")]
         public void mouseRightUp()
         {
             mouse_event(MOUSEEVENTF_RIGHTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
         }
 
-        [CommandRegistration("MK_KeyDown")]
+        [CommandRegistration("KeyDown")]
         public void keyDown(int keyCode)
         {
             InputSimulator.SimulateKeyDown((VirtualKeyCode)keyCode);
         }
 
-        [CommandRegistration("MK_KeyUp")]
+        [CommandRegistration("KeyUp")]
         public void keyUp(int keyCode)
         {
             InputSimulator.SimulateKeyUp((VirtualKeyCode)keyCode);
+        }
+
+        public string getTargetPrefix()
+        {
+            return "MK";
         }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]

@@ -32,7 +32,7 @@ namespace UnitTest
         [TestMethod]
         public void CommandExecuter_OneSimpleCommand_ExecutedCommand()
         {
-            Command testCommand = new Command("TestCommand");
+            Command testCommand = new Command("TEST", "TestCommand");
             commandExecuter.tryToExecuteCommand(testCommand);
             Assert.AreEqual(target.executed, true);
             Assert.AreEqual(target.executedArgs, false);
@@ -41,7 +41,7 @@ namespace UnitTest
         [TestMethod]
         public void CommandExecuter_OneNotRegisteredCommand_NoExecutedCommand()
         {
-            Command testCommand = new Command("TestCommandFake");
+            Command testCommand = new Command("TEST", "TestCommandFake");
             commandExecuter.tryToExecuteCommand(testCommand);
             Assert.AreEqual(target.executed, false);
             Assert.AreEqual(target.executedArgs, false);
@@ -50,7 +50,7 @@ namespace UnitTest
         [TestMethod]
         public void CommandExecuter_OneCommandWithArguments_ExecutedCommand()
         {
-            Command testCommand = new Command("TestCommandArgs", new string[] { "Arg", "0", "true" });
+            Command testCommand = new Command("TEST", "TestCommandArgs", new string[] { "Arg", "0", "true" });
             commandExecuter.tryToExecuteCommand(testCommand);
             Assert.AreEqual(target.executedArgs, true);
             Assert.AreEqual(target.arg1, "Arg");
@@ -62,7 +62,7 @@ namespace UnitTest
         [TestMethod]
         public void CommandExecuter_OneCommandWithTooLessArguments_NoExecutedCommand()
         {
-            Command testCommand = new Command("TestCommandArgs", new string[] { "Arg", "0" });
+            Command testCommand = new Command("TEST", "TestCommandArgs", new string[] { "Arg", "0" });
             commandExecuter.tryToExecuteCommand(testCommand);
             Assert.AreEqual(target.executedArgs, false);
             Assert.AreEqual(target.executed, false);
@@ -71,11 +71,11 @@ namespace UnitTest
         [TestMethod]
         public void CommandExecuter_OneCommandWithInvalidArguments_NoExecutedCommand()
         {
-            Command testCommand = new Command("TestCommandArgs", new string[] { "Arg", "0", "string" });
+            Command testCommand = new Command("TEST", "TestCommandArgs", new string[] { "Arg", "0", "string" });
             commandExecuter.tryToExecuteCommand(testCommand);
             Assert.AreEqual(target.executedArgs, false);
             Assert.AreEqual(target.executed, false);
-            testCommand = new Command("TestCommandArgs", new string[] { "Arg", "0NoNumber", "false" });
+            testCommand = new Command("TEST", "TestCommandArgs", new string[] { "Arg", "0NoNumber", "false" });
             commandExecuter.tryToExecuteCommand(testCommand);
             Assert.AreEqual(target.executedArgs, false);
             Assert.AreEqual(target.executed, false);
@@ -96,7 +96,7 @@ namespace UnitTest
         public void CommandExecuter_SameStatus_NoOutputCommand()
         {
             Client client = new Client();
-            client.setState("TestStatus", "42");
+            client.setState("TEST_TestStatus", "42");
             commandExecuter.refreshClientStates(client);
             Assert.AreEqual(executedCommand, null);
         }

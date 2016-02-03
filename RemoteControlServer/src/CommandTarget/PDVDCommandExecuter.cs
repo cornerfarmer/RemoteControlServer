@@ -16,98 +16,101 @@ namespace RemoteControlServer.CommandTarget
 	{
         private VMessages messages;
         
-        [StatusRegistration("PDVD_Open")]
+        [StatusRegistration("Open")]
         public string isOpen()
         {
             messages = new VMessages("CyberLink PowerDVD 12.0", "PowerDVD");
             return messages.windowExists() ? "1" : "0";
         }
 
-        [StatusRegistration("PDVD_Vol")]
+        [StatusRegistration("Vol")]
         public int getCurrentVolume()
         {
             return (int)(AudioController.getMasterVolume() * 100);
         }
 
-        [StatusRegistration("PDVD_Mute")]
+        [StatusRegistration("Mute")]
         public string isMuted()
         {
             return AudioController.getMute() ? "1" : "0";
         }
 
-        [CommandRegistration("PDVD_Open")]
+        [CommandRegistration("Open")]
         public void open()
         {
             Process.Start("C:\\Program Files (x86)\\CyberLink\\PowerDVD12\\PDVDLaunchPolicy.exe");
         }
 
-        [CommandRegistration("PDVD_PlayPause")]
+        [CommandRegistration("PlayPause")]
         public void playPause()
         {
             messages.sendKey(System.Windows.Forms.Keys.Space);
         }
 
-        [CommandRegistration("PDVD_Vol")]
+        [CommandRegistration("Vol")]
         public void setVol(int newVolume)
         {
             AudioController.setMasterVolume(newVolume / 100.0f);
         }
 
-        [CommandRegistration("PDVD_SwitchMute")]
+        [CommandRegistration("SwitchMute")]
         public void switchMute()
         {
             AudioController.switchMute();
         }
 
-        [CommandRegistration("PDVD_Left")]
+        [CommandRegistration("Left")]
         public void left()
         {
             messages.sendKey(System.Windows.Forms.Keys.Left);
         }
 
-        [CommandRegistration("PDVD_Up")]
+        [CommandRegistration("Up")]
         public void up()
         {
             messages.sendKey(System.Windows.Forms.Keys.Up);
         }
 
-        [CommandRegistration("PDVD_Down")]
+        [CommandRegistration("Down")]
         public void down()
         {
             messages.sendKey(System.Windows.Forms.Keys.Down);
         }
 
-        [CommandRegistration("PDVD_Right")]
+        [CommandRegistration("Right")]
         public void right()
         {
             messages.sendKey(System.Windows.Forms.Keys.Right);
         }
 
-        [CommandRegistration("PDVD_OK")]
+        [CommandRegistration("OK")]
         public void ok()
         {
             messages.sendKey(System.Windows.Forms.Keys.Enter);
         }
 
-        [CommandRegistration("PDVD_Menu")]
+        [CommandRegistration("Menu")]
         public void menu()
         {
             messages.sendKey(System.Windows.Forms.Keys.L);
         }
 
-        [CommandRegistration("PDVD_Next")]
+        [CommandRegistration("Next")]
         public void next()
         {
             messages.sendKey(System.Windows.Forms.Keys.N);
         }
 
-        [CommandRegistration("PDVD_Next")]
+        [CommandRegistration("Next")]
         public void prev()
         {
             messages.sendKey(System.Windows.Forms.Keys.P);
         }
-       
 
+        public string getTargetPrefix()
+        {
+            return "PDVD";
+        }
     }
 }
 

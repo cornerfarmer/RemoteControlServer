@@ -20,7 +20,8 @@ namespace UnitTest
         [TestMethod]
         public void CommandParser_SimpleCommand_CorrectCommandObject()
         {
-            Command command = commandParser.parseCommand("CommandName");
+            Command command = commandParser.parseCommand("TEST_CommandName");
+            Assert.AreEqual(command.getAppName(), "TEST");
             Assert.AreEqual(command.getName(), "CommandName");
             Assert.AreEqual(command.getArguments().Length, 0);
         }
@@ -28,7 +29,8 @@ namespace UnitTest
         [TestMethod]
         public void CommandParser_CommandWithArgument_CorrectCommandObject()
         {
-            Command command = commandParser.parseCommand("CommandName|Arg");
+            Command command = commandParser.parseCommand("TEST_CommandName|Arg");
+            Assert.AreEqual(command.getAppName(), "TEST");
             Assert.AreEqual(command.getName(), "CommandName");
             Assert.AreEqual(command.getArguments().Length, 1);
             Assert.AreEqual(command.getArguments()[0], "Arg");
@@ -37,7 +39,8 @@ namespace UnitTest
         [TestMethod]
         public void CommandParser_CommandWithArguments_CorrectCommandObject()
         {
-            Command command = commandParser.parseCommand("CommandName|Arg1:Arg2:Arg3");
+            Command command = commandParser.parseCommand("TEST_CommandName|Arg1:Arg2:Arg3");
+            Assert.AreEqual(command.getAppName(), "TEST");
             Assert.AreEqual(command.getName(), "CommandName");
             Assert.AreEqual(command.getArguments().Length, 3);
             Assert.AreEqual(command.getArguments()[0], "Arg1");
@@ -50,11 +53,11 @@ namespace UnitTest
         {
             try
             {
-                Command command = commandParser.parseCommand("CommandName|Foo|bar");
+                Command command = commandParser.parseCommand("TEST_CommandName|Foo|bar");
             } 
             catch (ArgumentException e)
             {
-                StringAssert.Contains(e.Message, "CommandName|Foo|bar");
+                StringAssert.Contains(e.Message, "TEST_CommandName|Foo|bar");
                 return;
             }
             Assert.Fail("No exception thrown");
@@ -95,7 +98,8 @@ namespace UnitTest
         [TestMethod]
         public void CommandParser_EmptyCommandArguments_CorrectCommandObject()
         {
-            Command command = commandParser.parseCommand("Name|");
+            Command command = commandParser.parseCommand("TEST_Name|");
+            Assert.AreEqual(command.getAppName(), "TEST");
             Assert.AreEqual(command.getName(), "Name");
             Assert.AreEqual(command.getArguments().Length, 0);
         }
@@ -106,11 +110,11 @@ namespace UnitTest
         {
             try
             {
-                Command command = commandParser.parseCommand("Name|::");
+                Command command = commandParser.parseCommand("TEST_Name|::");
             }
             catch (ArgumentException e)
             {
-                StringAssert.Contains(e.Message, "Name|::");
+                StringAssert.Contains(e.Message, "TEST_Name|::");
                 return;
             }
             Assert.Fail("No exception thrown");

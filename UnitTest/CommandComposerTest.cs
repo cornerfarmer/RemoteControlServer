@@ -20,22 +20,22 @@ namespace UnitTest
         [TestMethod]
         public void CommandParser_SimpleCommand_CorrectCommandString()
         {
-            string commandString = commandComposer.compose(new Command("SimpleCommand"));
-            Assert.AreEqual(commandString, "SimpleCommand");
+            string commandString = commandComposer.compose(new Command("TEST", "SimpleCommand"));
+            Assert.AreEqual(commandString, "TEST_SimpleCommand");
         }
 
         [TestMethod]
         public void CommandParser_CommandWithArgument_CorrectCommandString()
         {
-            string commandString = commandComposer.compose(new Command("CommandWithArg", new string[] { "Arg" }));
-            Assert.AreEqual(commandString, "CommandWithArg|Arg");
+            string commandString = commandComposer.compose(new Command("TEST", "CommandWithArg", new string[] { "Arg" }));
+            Assert.AreEqual(commandString, "TEST_CommandWithArg|Arg");
         }
 
         [TestMethod]
         public void CommandParser_CommandWithArguments_CorrectCommandString()
         {
-            string commandString = commandComposer.compose(new Command("CommandWithArgs", new string[] { "Arg1", "Arg2", "Arg3" }));
-            Assert.AreEqual(commandString, "CommandWithArgs|Arg1:Arg2:Arg3");
+            string commandString = commandComposer.compose(new Command("TEST", "CommandWithArgs", new string[] { "Arg1", "Arg2", "Arg3" }));
+            Assert.AreEqual(commandString, "TEST_CommandWithArgs|Arg1:Arg2:Arg3");
         }
     }
 }

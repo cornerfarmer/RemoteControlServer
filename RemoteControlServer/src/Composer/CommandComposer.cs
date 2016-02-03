@@ -25,8 +25,9 @@ namespace RemoteControlServer.Composer
 
         private string getNamePart()
         {
-            return command.getName();
+            return command.getAppName() + "_" + command.getName();
         }
+        
 
         private string getArgumentsPart()
         {

@@ -33,6 +33,11 @@ namespace RemoteControlServer.CommandExecuter
         {
             return targetInfo.getStatusName();
         }
+
+        public string getAppName()
+        {
+            return targetObject.getTargetPrefix();
+        }
     }
 
 }
