@@ -14,15 +14,21 @@ namespace RemoteControlServer.ClientService
 
 	public class ClientService : IClientService
     {
-		public virtual IClientRepository ClientRepository
-		{
-			get;
-			set;
-		}
+        private IClientRepository clientRepository;
+
+        public ClientService(IClientRepository clientRepository_)
+        {
+
+        }
 
 		public virtual Client getClientForNewConnection(string ip)
 		{
-			throw new System.NotImplementedException();
+            Client client = clientRepository.getClientWithIp(ip);
+            if (client == null)
+            {
+                client = new Client();
+            }
+            return client;
 		}
 
 	}

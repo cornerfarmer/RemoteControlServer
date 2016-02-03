@@ -14,23 +14,11 @@ namespace RemoteControlServer.Definitions
 
     public class Client 
 	{
-		public virtual string name
-		{
-			get;
-			set;
-		}
+        private string name;
 
-		public virtual string ip
-		{
-			get;
-			set;
-		}
+        private string ip;
 
-		public virtual Boolean allowed
-		{
-			get;
-			set;
-		}
+        private Boolean allowed;
 
         private Dictionary<string, string> states;
 
@@ -51,6 +39,36 @@ namespace RemoteControlServer.Definitions
                 return states[key];
             else
                 return "";
+        }
+
+        public string getIp()
+        {
+            return ip;
+        }
+
+        public string getName()
+        {
+            return name;
+        }
+
+        public bool isAllowed()
+        {
+            return allowed;
+        }
+
+        public void setIp(string ip_)
+        {
+            ip = ip_;
+        }
+
+        public void setName(string name_)
+        {
+            name = name_;
+        }
+
+        public void setAllowed(bool allowed_)
+        {
+            allowed = allowed_;
         }
 
 	}

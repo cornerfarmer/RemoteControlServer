@@ -6,19 +6,105 @@
 //------------------------------------------------------------------------------
 namespace RemoteControlServer.ClientRepository
 {
-	using Definitions;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-
-	public class ClientRepository : IClientRepository
+    using Definitions;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Xml;
+    using System.Xml.Linq;
+    public class ClientRepository : IClientRepository
     {
-		public virtual Client getClientWithIp(string ip)
+        private List<Client> storage;
+        private string storageFilePath = "clients.txt";
+
+        public ClientRepository()
+        {
+            loadFromFile();
+        }
+
+        public void addClient(Client client)
+        {
+            storage.Add(client);
+            saveToFile();
+        }
+
+        public virtual Client getClientWithIp(string ip)
 		{
-			throw new System.NotImplementedException();
+			foreach (Client client in storage)
+            {
+                if (client.getIp() == ip)
+                {
+                    return client;
+                }
+            }
+            return null;
 		}
 
-	}
+        private void saveToFile()
+        {
+            System.IO.File.WriteAllText(storageFilePath, getTextToExport());
+        }
+
+        private string getTextToExport()
+        {
+            return getXML().ToString();
+        }
+
+        private XElement getXML()
+        {
+            return new XElement("RemoteControlServer", getXMLOfClients());
+        }
+
+        private XElement getXMLOfClients()
+        {
+            XElement clientsXML = new XElement("Clients");
+            foreach (Client client in storage)
+            {
+                clientsXML.Add(getXMLOfClient(client));
+            }
+            return clientsXML;
+        }
+
+        private XElement getXMLOfClient(Client client)
+        {
+            XElement clientXML = new XElement("Client");
+            clientXML.Add("Name", client.getName());
+            clientXML.Add("IP", client.getIp());
+            clientXML.Add("Allowed", client.isAllowed());
+            return clientXML;
+        }
+
+        private void loadFromFile()
+        {
+            storage = new List<Client>();
+            parseXML(System.IO.File.ReadAllText(storageFilePath));
+        }
+
+        private void parseXML(string xml)
+        {
+            XmlDocument document = new XmlDocument();
+            document.Load(xml);
+            parseXMLOfClients(document["RemoteControlServer"]["Clients"]);
+        }
+
+        private void parseXMLOfClients(XmlElement clients)
+        {
+            foreach (XmlElement client in clients.SelectNodes("Client"))
+            {
+                parseXMLOfClient(client);
+            }
+        }
+
+        private void parseXMLOfClient(XmlElement clientXML)
+        {
+            Client client = new Client();
+            client.setName(clientXML["Name"].InnerText);
+            client.setIp(clientXML["ip"].InnerText);
+            client.setAllowed(Convert.ToBoolean(clientXML["Allowed"].InnerText));
+            storage.Add(client);
+        }
+    }
 }
 
