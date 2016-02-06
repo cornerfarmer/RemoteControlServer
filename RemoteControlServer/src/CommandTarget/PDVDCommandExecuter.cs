@@ -101,7 +101,7 @@ namespace RemoteControlServer.CommandTarget
             messages.sendKey(System.Windows.Forms.Keys.N);
         }
 
-        [CommandRegistration("Next")]
+        [CommandRegistration("Prev")]
         public void prev()
         {
             messages.sendKey(System.Windows.Forms.Keys.P);
